@@ -8,4 +8,5 @@ import org.springframework.context.annotation.Configuration;
 @MapperScan(basePackages = "com.ohgiraffers.samsam",annotationClass = Mapper.class)
 public class MybatisConfiguration {
     // mapperscan 위치 맞는지 확인 부탁드립니다.
+    // 확인부탁
 }
