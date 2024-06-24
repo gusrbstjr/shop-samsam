@@ -3,11 +3,21 @@ spring:
     name: samsam
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://ssgmysql.iptime.org:3306/samsamdb
+    url: jdbc:mysql://ssg-java2.iptime.org:3306/samsamdb
     username: samsam
     password: samsam
-server:
-  port: 8080
-
-# mybatis ??
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: samsam.glasses@gmail.com
+    password: yguu vvpx xire qcdy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+mybatis:
+  mapper-locations: mappers/**/*.xml
 
