@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class MemberDTO {
+public class Member {
     private int accountSeq;
     private String accountId;
     private String accountPwd;

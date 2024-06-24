@@ -10,7 +10,7 @@ import java.util.List;
 public class MemberService {
     private final MemberMapper memberMapper;
 
-    public List<MemberDTO> findAll() {
+    public List<Member> findAll() {
         return memberMapper.findAll();
     }
 }

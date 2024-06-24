@@ -7,5 +7,5 @@ import java.util.List;
 @Mapper
 public interface MemberMapper {
 
-    List<MemberDTO> findAll();
+    List<Member> findAll();
 }
