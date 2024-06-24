@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.samsam.order.model.dao.OrderFindMapper">
+
+    <resultMap id="orderResultMap" type="com.ohgiraffers.samsam.order.model.dto.OrderFindDTO">
+        <id property="order_seq" column="ORDER_SEQ"/>
+        <result property="customer_seq" column="CUSTOMER_SEQ"/>
+        <result property="product_seq" column="PRODUCT_SEQ"/>
+        <result property="total_price" column="TOTAL_PRICE"/>
+        <result property="register_date" column="REGISTER_DATE"/>
+        <result property="order_status" column="ORDER_STATUS"/>
+    </resultMap>
+
+    <select id="findOrderList" resultMap="orderResultMap">
+        SELECT
+            order_seq,
+            customer_seq,
+            product_seq,
+            total_price,
+            register_date,
+            order_status
+        FROM
+            order
+        <if test="orderName !=null and orderName !=''">
+            WHERE order_status LIKE CONCAT('%', #{orderName}, '%')
+        </if>
+        ORDER BY order_seq
+    </select>
+
+</mapper>
