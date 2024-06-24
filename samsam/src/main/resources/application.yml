@@ -6,5 +6,18 @@ spring:
     url: jdbc:mysql://ssg-java2.iptime.org:3306/samsamdb
     username: samsam
     password: samsam
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: samsam.glasses@gmail.com
+    password: yguu vvpx xire qcdy
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 mybatis:
   mapper-locations: mappers/**/*.xml
+

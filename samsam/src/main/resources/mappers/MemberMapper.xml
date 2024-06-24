@@ -5,7 +5,7 @@
 
 <mapper namespace="com.ohgiraffers.samsam.member.MemberMapper">
 
-    <resultMap id="memberResultMap" type="com.ohgiraffers.samsam.member.MemberDTO">
+    <resultMap id="memberResultMap" type="com.ohgiraffers.samsam.member.Member">
         <id property="accountSeq" column="account_seq"/>
         <result property="accountId" column="account_id"/>
         <result property="accountPwd" column="account_pwd"/>
