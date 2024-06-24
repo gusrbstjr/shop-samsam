@@ -6,8 +6,6 @@ spring:
     url: jdbc:mysql://ssgmysql.iptime.org:3306/samsamdb
     username: samsam
     password: samsam
-server:
-  port: 8080
 
 # mybatis ??
 
