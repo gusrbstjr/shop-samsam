@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohgiraffers.samsam.member.MemberMapper">
+
+    <resultMap id="memberResultMap" type="com.ohgiraffers.samsam.member.MemberDTO">
+        <id property="accountSeq" column="account_seq"/>
+        <result property="accountId" column="account_id"/>
+        <result property="accountPwd" column="account_pwd"/>
+        <result property="name" column="name"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <result property="mailAddr" column="mail_addr"/>
+        <result property="accountAddr" column="account_addr"/>
+        <result property="companyName" column="company_name"/>
+        <result property="businessNum" column="business_num"/>
+        <result property="accumulatedAmount" column="accumulated_amount"/>
+        <result property="accountRole" column="account_role"/>
+        <result property="gradeSeq" column="grade_seq"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="memberResultMap">
+        select * from account
+    </select>
+</mapper>

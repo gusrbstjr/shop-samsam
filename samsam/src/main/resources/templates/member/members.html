@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -210,15 +210,49 @@
         <section class="section">
             <div class="row">
                 <div class="col-lg-8">
-
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">title</h5>
+                            <!--<h5 class="card-title">title</h5>
 
                             <form action="/order/list" method="GET">
                                 <input type="text" name="orderName" id="orderName">
                                 <button type="submit">submit</button>
-                            </form>
+                            </form>-->
+                            <h2>Member List</h2>
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Account Seq</th>
+                                    <th>Account ID</th>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Email Address</th>
+                                    <th>Account Address</th>
+                                    <th>Company Name</th>
+                                    <th>Business Number</th>
+                                    <th>Accumulated Amount</th>
+                                    <th>Subscribe Ads</th>
+                                    <th>Account Role</th>
+                                    <th>Grade Seq</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="member : ${members}">
+                                    <td th:text="${member.accountSeq}"></td>
+                                    <td th:text="${member.accountId}"></td>
+                                    <td th:text="${member.name}"></td>
+                                    <td th:text="${member.phoneNumber}"></td>
+                                    <td th:text="${member.mailAddr}"></td>
+                                    <td th:text="${member.accountAddr}"></td>
+                                    <td th:text="${member.companyName}"></td>
+                                    <td th:text="${member.businessNum}"></td>
+                                    <td th:text="${member.accumulatedAmount}"></td>
+                                    <td th:text="${member.subscribeAds ? 'Yes' : 'No'}"></td>
+                                    <td th:text="${member.accountRole}"></td>
+                                    <td th:text="${member.gradeSeq}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
