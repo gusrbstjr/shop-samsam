@@ -13,7 +13,7 @@
         <result property="order_status" column="ORDER_STATUS"/>
     </resultMap>
 
-    <select id="findOrderList" resultMap="orderResultMap">
+    <select id="orderFind" resultMap="orderResultMap">
         SELECT
             order_seq,
             customer_seq,
@@ -22,7 +22,7 @@
             register_date,
             order_status
         FROM
-            order
+            `order`
         <if test="orderName !=null and orderName !=''">
             WHERE order_status LIKE CONCAT('%', #{orderName}, '%')
         </if>

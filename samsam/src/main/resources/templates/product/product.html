@@ -5,29 +5,31 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Tables / General - NiceAdmin Bootstrap Template</title>
+    <title>SAMSAM PRODUCT</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- Favicons -->
-    <link href="/bootstrap/assets/img/favicon.png" rel="icon">
-    <link href="/bootstrap/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="bootstrap/assets/img/favicon.png" rel="icon">
+    <link href="bootstrap/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CNunito:300,300i,400,400i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="/bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/bootstrap/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="/bootstrap/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="/bootstrap/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="/bootstrap/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="/bootstrap/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="/bootstrap/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="bootstrap/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="bootstrap/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="bootstrap/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="bootstrap/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="bootstrap/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="/bootstrap/assets/css/style.css" rel="stylesheet">
+    <link href="bootstrap/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: NiceAdmin
@@ -36,6 +38,45 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn-small-purple {
+            background-color: purple;
+            color: white;
+            transform: scale(0.7); /* 크기를 반으로 줄임 */
+            border: none;
+        }
+        .btn-small-purple .badge {
+            background-color: white;
+            color: purple;
+        }
+        .btn-small-lightpurple {
+            background-color: #D8BFD8; /* 연보라색 */
+            color: black;
+            transform: scale(0.7); /* 크기를 반으로 줄임 */
+            border: none;
+        }
+        .btn-small-lightpurple .badge {
+            background-color: white;
+            color: #D8BFD8;
+        }
+        .btn-purple {
+            background-color: #955BA5;
+            color: white;
+            border: black;
+        }
+
+        .btn-purple:hover {
+            background-color: #bd93f9;
+            color: white;
+        }
+
+        .btn-purple.btn-lg {
+            padding: 12px 20px;
+            font-size: 1.25rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -97,6 +138,7 @@
             <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
             </a>
+
         </li><!-- End Components Nav -->
 
         <li class="nav-item">
@@ -128,7 +170,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/order/list">
+                    <a href="OrderFind.html">
                         <i class="bi bi-circle"></i><span>주문 조회</span>
                     </a>
                 </li>
@@ -179,66 +221,74 @@
     </ul>
 </aside><!-- End Sidebar-->
 
-<main id="mains" class="main">
-
-    <div class="pagetitle">
-        <h1>주문 조회</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item">Tables</li>
-                <li class="breadcrumb-item active">General</li>
-            </ol>
-        </nav>
-    </div><!-- End Page Title -->
-
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Data Tables</h1>
+        <h1>PRODUCT</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item">Tables</li>
-                <li class="breadcrumb-item active">Data</li>
+                <li class="breadcrumb-item">상품관리</li>
             </ol>
         </nav>
     </div><!-- End Page Title -->
 
     <section class="section">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">주문 조회</h5>
+                        <h5 class="card-title">상품 조회 , 등록 , 수정 , 삭제</h5>
+                        <div class="text-center mt-3">
 
-                        <form action="/order/list" method="GET">
-                            <input type="text" name="orderName" id="orderName">
-                            <button type="submit">전체 주문 조회</button>
-                        </form>
+
+                            <button type="button" class="btn btn-purple btn-lg mb-2">
+                                새상품 등록
+                                <i class="ri-send-plane-fill ml-2"></i>
+                            </button>
+
+
+
+                        </div>
 
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
                             <tr>
-                                <th>주문시퀀스</th>
-                                <th>주문 상태</th>
-                                <th>등록일</th>
-                                <th>총 결제 금액</th>
-                                <th>제품시퀀스</th>
-                                <th>고객시퀀스키</th>
+                                <th>ProductNumber</th>
+                                <th>ProductName</th>
+                                <th data-type="date" data-format="YYYY/DD/MM">Register Date</th>
+                                <th>Product Price</th>
+                                <th>CategoryName</th>
+                                <th>수정 또는 삭제</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr th:each="order : ${orderList}">
-                                <td th:text="${order.order_seq}">No data</td>
-                                <td th:text="${order.order_status}">No data</td>
-                                <td th:text="${order.register_date}">No data</td>
-                                <td th:text="${order.total_price}">No data</td>
-                                <td th:text="${order.product_seq}">No data</td>
-                                <td th:text="${order.customer_seq}">No data</td>
+                            <tr th:each="product:${productList}">
+                                <td th:text="${product.productSeq}"></td>
+                                <td th:text="${product.productName}"></td>
+                                <td th:text="${product.registerDate}"></td>
+                                <td th:text="${product.productPrice}"></td>
+                                <td th:text="${product.categoryName}"></td>
+                                <td>
+                                    <div class="d-flex">
+                                        <button type="button" class="btn btn-small-purple mb-2 d-flex align-items-center flex-grow-1">
+                                            Edit
+                                            <i class="ri-edit-2-line ml-2"></i>
+                                        </button>
+
+                                        <button type="button" class="btn btn-small-lightpurple mb-2 d-flex align-items-center flex-grow-1">
+                                            delete
+                                            <i class="ri-delete-bin-line ml-2"></i>
+                                        </button>
+                                    </div>
+
+
+
+                                </td>
                             </tr>
+
                             </tbody>
                         </table>
                         <!-- End Table with stripped rows -->
@@ -249,9 +299,8 @@
             </div>
         </div>
     </section>
-</main>
-</main><!-- End #main -->
 
+</main>
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
     <div class="copyright">
@@ -269,17 +318,17 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-<script src="bootstrap/assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="bootstrap/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="bootstrap/assets/vendor/chart.js/chart.umd.js"></script>
-<script src="bootstrap/assets/vendor/echarts/echarts.min.js"></script>
-<script src="bootstrap/assets/vendor/quill/quill.js"></script>
-<script src="bootstrap/assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="bootstrap/assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="bootstrap/assets/vendor/php-email-form/validate.js"></script>
+<script src="/bootstrap/assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="/bootstrap/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/bootstrap/assets/vendor/chart.js/chart.umd.js"></script>
+<script src="/bootstrap/assets/vendor/echarts/echarts.min.js"></script>
+<script src="/bootstrap/assets/vendor/quill/quill.js"></script>
+<script src="/bootstrap/assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="/bootstrap/assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="/bootstrap/assets/vendor/php-email-form/validate.js"></script>
 
 <!-- Template Main JS File -->
-<script src="bootstrap/assets/js/main.js"></script>
+<script src="/bootstrap/assets/js/main.js"></script>
 
 </body>
 

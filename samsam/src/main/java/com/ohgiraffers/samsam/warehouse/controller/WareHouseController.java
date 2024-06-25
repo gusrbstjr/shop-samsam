@@ -1,6 +1,5 @@
 package com.ohgiraffers.samsam.warehouse.controller;
 
-import com.ohgiraffers.samsam.warehouse.model.dto.StockDTO;
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
 import com.ohgiraffers.samsam.warehouse.model.service.WareHouseService;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +14,7 @@ import java.util.List;
 @Controller
 @Slf4j
 @RequestMapping
+
 public class WareHouseController {
 
     private final WareHouseService wareHouseService;
@@ -29,14 +29,13 @@ public class WareHouseController {
         return "warehouse/InAndOut";
     }
 
-
     @GetMapping("/list")
-        public String list(Model model, @RequestParam(required = false) String WareHouse) {
-            log.info("[WareHouseController] list WareHouse: {}", WareHouse);
-            List<WareHouseDTO> WareHouseList = wareHouseService.AllWareHouse(WareHouse);
-            log.info("[WareHouseController] list===============\n {}", WareHouseList);
+    public String list(Model model, @RequestParam(required = false) String WareHouse) {
+        log.info("[WareHouseController] list WareHouse: {}", WareHouse);
+        List<WareHouseDTO> WareHouseList = wareHouseService.AllWareHouse(WareHouse);
+        log.info("[WareHouseController] list===============\n {}", WareHouseList);
 
-            model.addAttribute("WareHouseList", WareHouseList);
+        model.addAttribute("WareHouseList", WareHouseList);
 
             return "/warehouse/list";
         }
@@ -78,5 +77,3 @@ public class WareHouseController {
         return "warehouse/InAndOut";
     }
 }
-
-
