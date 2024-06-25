@@ -10,24 +10,24 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="bootstrap/assets/img/favicon.png" rel="icon">
-    <link href="bootstrap/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/bootstrap/assets/img/favicon.png" rel="icon">
+    <link href="/bootstrap/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CNunito:300,300i,400,400i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="bootstrap/assets/css/style.css" rel="stylesheet">
+    <link href="/bootstrap/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: NiceAdmin
@@ -128,7 +128,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="OrderFind.html">
+                    <a href="/order/list">
                         <i class="bi bi-circle"></i><span>주문 조회</span>
                     </a>
                 </li>
@@ -179,7 +179,7 @@
     </ul>
 </aside><!-- End Sidebar-->
 
-<main id="main" class="main">
+<main id="mains" class="main">
 
     <div class="pagetitle">
         <h1>주문 조회</h1>
@@ -219,7 +219,7 @@
                         </form>
 
                         <!-- Table with stripped rows -->
-                        <table class="주문 조회">
+                        <table class="table datatable">
                             <thead>
                             <tr>
                                 <th>주문시퀀스</th>
@@ -232,12 +232,12 @@
                             </thead>
                             <tbody>
                             <tr th:each="order : ${orderList}">
-                                <td th:text="${order.orderSeq}">No data</td>
-                                <td th:text="${order.orderStatus}">No data</td>
-                                <td th:text="${order.registerDate}">No data</td>
-                                <td th:text="${order.totalPrice}">No data</td>
-                                <td th:text="${order.productSeq}">No data</td>
-                                <td th:text="${order.customerSeq}">No data</td>
+                                <td th:text="${order.order_seq}">No data</td>
+                                <td th:text="${order.order_status}">No data</td>
+                                <td th:text="${order.register_date}">No data</td>
+                                <td th:text="${order.total_price}">No data</td>
+                                <td th:text="${order.product_seq}">No data</td>
+                                <td th:text="${order.customer_seq}">No data</td>
                             </tr>
                             </tbody>
                         </table>
@@ -249,7 +249,7 @@
             </div>
         </div>
     </section>
-
+</main>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
