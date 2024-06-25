@@ -23,4 +23,9 @@ public class loginServiceImpl implements loginService {
         map.put("accountPwd", pwd);
         return loginMapper.isLogin(map) == 1 ? true : false;
     }
+
+    @Override
+    public String findAccountRoll(String accountId) {
+        return loginMapper.findAccountRoll(accountId);
+    }
 }
