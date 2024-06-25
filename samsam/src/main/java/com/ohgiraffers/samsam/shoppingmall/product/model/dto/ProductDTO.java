@@ -9,12 +9,11 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-
 public class ProductDTO {
 
     private int productSeq;
     private String productName;
-    private Date registerDate;
+    private String registerDate;
     private int productPrice;
     private String categoryName;
 }
