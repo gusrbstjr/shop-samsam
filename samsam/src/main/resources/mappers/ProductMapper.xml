@@ -13,4 +13,10 @@
     <select id="findProductList" resultMap="productResultMap">
         select * from product
     </select>
+
+    <insert id="registNewProduct">
+        INSERT INTO product (product_name , register_date , product_price, category_name)
+            VALUES (#{productName}, #{registerDate}, #{productPrice} ,#{categoryName} ) <!-- 필드명 -->
+
+    </insert>
     </mapper>
