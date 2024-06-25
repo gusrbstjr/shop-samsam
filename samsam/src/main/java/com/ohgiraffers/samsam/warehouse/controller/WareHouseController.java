@@ -1,3 +1,4 @@
+/*
 package com.ohgiraffers.samsam.warehouse.controller;
 
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
@@ -22,9 +23,11 @@ public class WareHouseController {
     public WareHouseController(WareHouseService wareHouseService) {
         this.wareHouseService = wareHouseService;
     }
-    /***
+    */
+/***
      * 창고 재고조회
-     */
+     *//*
+
     @GetMapping("InAndOut.html")
     public String inAndOut() {
         return "warehouse/InAndOut";
@@ -42,4 +45,4 @@ public class WareHouseController {
 
         return "/warehouse/list";
     }
-}
+}*/

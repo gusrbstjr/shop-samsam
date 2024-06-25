@@ -11,6 +11,9 @@ public class MainController {
     @GetMapping(value={"/", "/main"})
     public String dfaultLocation(){
         return "main/main";
+//        return "product/product";
     }
 
 }
+
+
