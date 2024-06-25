@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface ProductMapper {
     List<ProductDTO> findProductList(String ProductName);
+
+    void registNewProduct(ProductDTO newProduct);
 }
