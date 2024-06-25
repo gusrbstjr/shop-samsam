@@ -1,0 +1,11 @@
+package com.ohgiraffers.samsam.login.model.dao;
+
+import groovy.transform.AnnotationCollector;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.Map;
+
+@Mapper
+public interface loginMapper {
+    int isLogin(Map<String, String> map);
+}
