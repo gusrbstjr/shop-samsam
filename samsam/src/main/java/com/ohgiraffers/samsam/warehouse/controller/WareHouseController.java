@@ -15,6 +15,7 @@ import java.util.List;
 @Slf4j
 @RequestMapping
 
+@Slf4j
 public class WareHouseController {
 
     private final WareHouseService wareHouseService;
@@ -24,6 +25,12 @@ public class WareHouseController {
     /***
      * 창고 재고조회
      */
+    @GetMapping("InAndOut.html")
+    public String inAndOut() {
+        return "warehouse/InAndOut";
+    }
+
+}
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(required = false) String WareHouse) {
