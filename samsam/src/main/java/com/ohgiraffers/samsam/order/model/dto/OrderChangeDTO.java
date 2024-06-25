@@ -13,5 +13,5 @@ public class OrderChangeDTO {
     private int product_seq;
     private int total_price;
     private String register_date;
-    private int order_status;
+    private String order_status;
 }

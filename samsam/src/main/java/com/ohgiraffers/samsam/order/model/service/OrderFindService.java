@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface OrderFindService {
 
+    List<OrderFindDTO> orderFind(String orderName);
+
 
 }
