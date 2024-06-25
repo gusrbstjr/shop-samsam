@@ -18,8 +18,11 @@ public class MemberController {
 
     @GetMapping()
     public String members(Model model) {
-        log.info("/members/");
+        log.info("/members/members");
         List<Member> members = memberService.findAll();
+        for (Member member : members) {
+            System.out.println(member.isSubscribeAds());
+        }
         model.addAttribute("members", members);
         return "member/members";
     }

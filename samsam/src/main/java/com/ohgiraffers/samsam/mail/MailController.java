@@ -23,7 +23,7 @@ public class MailController {
         log.info("/members/mail-form");
 
 //        return "member/mail-form";
-        return "member/tmp";
+        return "member/mail-form";
     }
 
     @PostMapping("/members/mail/send")
