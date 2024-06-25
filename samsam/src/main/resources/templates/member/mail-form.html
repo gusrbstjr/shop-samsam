@@ -9,25 +9,27 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- Favicons -->
-    <link href="bootstrap/assets/img/favicon.png" rel="icon">
-    <link href="bootstrap/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/bootstrap/assets/img/favicon.png" rel="icon">
+    <link href="/bootstrap/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CNunito:300,300i,400,400i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="bootstrap/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/bootstrap/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="bootstrap/assets/css/style.css" rel="stylesheet">
+    <link href="/bootstrap/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: NiceAdmin
@@ -44,7 +46,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="main.html" class="logo d-flex align-items-center">
+        <a href="" class="logo d-flex align-items-center">
             <img src="assets/img/logo.png" alt="">
             <span class="d-none d-lg-block">SAMSAM-ADMIN</span>
         </a>
@@ -182,7 +184,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>General Tables</h1>
+        <h1>주문 조회</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -192,82 +194,69 @@
         </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
-        <div class="row">
-            <div class="col-lg-12">
+    <main id="main" class="main">
 
-                <form action="/orderChange/list">
-                    <input type="text" name="orderName" id="orderName">
-                    <button type="submit">주문 시퀀스 키를 입력하시오.</button>
-                </form>
-                <table class="table datatable">
-                    <thead>
-                    <tr>
-                        <th>주문시퀀스</th>
-                        <th>주문 상태</th>
-                        <th>등록일</th>
-                        <th>총 결제 금액</th>
-                        <th>제품시퀀스</th>
-                        <th>고객시퀀스키</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr th:each="order: ${orderList}">
-                        <td th:text="${order.order_seq}"></td>
-                        <td th:text="${order.order_status}" class="clickable"></td>
-                        <td th:text="${order.register_date}"></td>
-                        <td th:text="${order.total_price}"></td>
-                        <td th:text="${order.product_seq}"></td>
-                        <td th:text="${order.customer_seq}"></td>
-                    </tr>
-                    </tbody>
-                </table>
+        <div class="pagetitle">
+            <h1>Data Tables</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item">Tables</li>
+                    <li class="breadcrumb-item active">Data</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">title</h5>
+
+                            <form action="/order/list" method="GET">
+                                <input type="text" name="orderName" id="orderName">
+                                <button type="submit">submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <!-- End small tables -->
+        </section>
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>SAMSAM-ADMIN</span></strong>. All Rights Reserved
         </div>
-    </section>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </footer><!-- End Footer -->
 
-</main><!-- End #main -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
-    <div class="copyright">
-        &copy; Copyright <strong><span>SAMSAM-ADMIN</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-</footer><!-- End Footer -->
+    <!-- Vendor JS Files -->
+    <script src="/bootstrap/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/bootstrap/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/bootstrap/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="/bootstrap/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="/bootstrap/assets/vendor/quill/quill.js"></script>
+    <script src="/bootstrap/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/bootstrap/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/bootstrap/assets/vendor/php-email-form/validate.js"></script>
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Template Main JS File -->
+    <script src="/bootstrap/assets/js/main.js"></script>
 
-<!-- Vendor JS Files -->
-<script src="bootstrap/assets/vendor/apexcharts/apexcharts.min.js"></script>
-<script src="bootstrap/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="bootstrap/assets/vendor/chart.js/chart.umd.js"></script>
-<script src="bootstrap/assets/vendor/echarts/echarts.min.js"></script>
-<script src="bootstrap/assets/vendor/quill/quill.js"></script>
-<script src="bootstrap/assets/vendor/simple-datatables/simple-datatables.js"></script>
-<script src="bootstrap/assets/vendor/tinymce/tinymce.min.js"></script>
-<script src="bootstrap/assets/vendor/php-email-form/validate.js"></script>
-<!-- Template Main JS File -->
-<script src="bootstrap/assets/js/main.js"></script>
-<!--이건 내가 -->
-<!--<script>-->
-<!--    document.addEventListener('DOMContentLoaded', function() {-->
-<!--    document.querySelectorAll('.clickable').forEach(item => {-->
-<!--        item.addEventListener('click', event => {-->
-<!--            if (event.target.textContent === '결제완료') {-->
-<!--                event.target.textContent = '배송완료';-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-<!--});-->
-<!--</script>-->
 </body>
 
 </html>
