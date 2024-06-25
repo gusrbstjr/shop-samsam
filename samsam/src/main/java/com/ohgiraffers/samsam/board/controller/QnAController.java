@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class QnAController {
 
-    @GetMapping("/QnA.html")
+    @GetMapping("/QnA")
     public String QnAChange() {
         return "board/QnA"; // templates 폴더 안의 OrderChange.html을 렌더링
     }

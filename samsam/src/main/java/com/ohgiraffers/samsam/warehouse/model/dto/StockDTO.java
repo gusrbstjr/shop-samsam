@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-public class stockDTO {
+public class StockDTO {
     private int stockSeq;
     private int stockQuantity;
     private int productSeq;

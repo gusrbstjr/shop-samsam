@@ -21,4 +21,29 @@ public class WareHouseServiceImpl implements WareHouseService{
         log.info("[WareHouseImpl] AllMenu menuName {}", WareHouse);
         return wareHouseMapper.AllWareHouse(WareHouse);
     }
+//
+//    @Override
+//    public boolean inAndOut(int orderSeq, int quantity) {
+//        return wareHouseMapper.inAndOut(orderSeq, quantity);
+//    }
+
+    @Override
+    public boolean isTrue(int orderSeq) {
+        return wareHouseMapper.isTrue(orderSeq) > 0? true: false;
+    }
+
+    @Override
+    public int quantityNum(int quantity) {
+        return wareHouseMapper.quantityNum(quantity);
+    }
+
+    @Override
+    public int changedQuantity(int orderSeq, int quantity) {
+        return wareHouseMapper.changedQuantity(orderSeq, quantity);
+    }
+
+    @Override
+    public int insertLog(int orderSeq, int status, int quantity) {
+        return wareHouseMapper.insertLog(orderSeq, status, quantity);
+    }
 }
