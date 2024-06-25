@@ -15,5 +15,7 @@ public class OrderChangeController {
         return "order/OrderChange"; // templates 폴더 안의 OrderChange.html을 렌더링
     }
 
+    @GetMapping("/main.html")
+    public String main() {return "main/main";}
 }
 
