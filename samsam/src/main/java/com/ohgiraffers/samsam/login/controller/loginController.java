@@ -22,10 +22,9 @@ public class loginController {
     public String login(Model model, @RequestParam(required = false) String username, String password) {
         boolean isLogin = loginService.isLogin(username, password);
         if (isLogin) {
-
-            return "main/main";
-        }else {
-
+            if (username.equals("user")) return "userinterface/index";
+            else return "main/main";
+        } else {
             return "login/login";
         }
     }

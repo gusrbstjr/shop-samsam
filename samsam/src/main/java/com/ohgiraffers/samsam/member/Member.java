@@ -21,4 +21,5 @@ public class Member {
     private boolean subscribeAds;
     private String accountRole;
     private int gradeSeq;
+    private String gradeName;
 }

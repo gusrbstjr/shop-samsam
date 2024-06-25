@@ -16,11 +16,29 @@
         <result property="companyName" column="company_name"/>
         <result property="businessNum" column="business_num"/>
         <result property="accumulatedAmount" column="accumulated_amount"/>
+        <result property="subscribeAds" column="subscribe_ads"/>
         <result property="accountRole" column="account_role"/>
         <result property="gradeSeq" column="grade_seq"/>
+        <result property="gradeName" column="grade_name"/>
     </resultMap>
 
     <select id="findAll" resultMap="memberResultMap">
-        select * from account
+        select
+        account_seq,
+        account_id,
+        account_pwd,
+        name,
+        phone_number,
+        mail_addr,
+        account_addr,
+        company_name,
+        business_num,
+        accumulated_amount,
+        subscribe_ads,
+        account_role,
+        grade_name
+        from account join grade using(grade_seq)
+        where account_role = '고객' order by name
     </select>
+
 </mapper>
