@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @Slf4j
@@ -21,9 +23,7 @@ public class MailController {
     @GetMapping("/members/mail-form")
     public String mailForm() {
         log.info("/members/mail-form");
-
-//        return "member/mail-form";
-        return "member/mail-form";
+        return "/member/mail-form";
     }
 
     @PostMapping("/members/mail/send")
@@ -37,9 +37,16 @@ public class MailController {
         log.info("subject={}", subject);
         log.info("content={}", content);
 
-        mailService.sendMail(mailRequest);
-
+//        mailService.sendMail(mailRequest);
+        Map<String, String> mailMap = new HashMap<>();
+        mailMap.put("mailTitle", subject);
+        mailMap.put("mailContent", content);
+        mailService.save(mailMap);
         return "ok";
     }
 
+    @GetMapping("/members/mail-sent")
+    public String mailSent() {
+        return "member/mail-sent";
+    }
 }

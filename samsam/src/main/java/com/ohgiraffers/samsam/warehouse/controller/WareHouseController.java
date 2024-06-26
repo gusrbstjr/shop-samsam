@@ -19,18 +19,16 @@ import java.util.List;
 public class WareHouseController {
 
     private final WareHouseService wareHouseService;
-
     public WareHouseController(WareHouseService wareHouseService) {
         this.wareHouseService = wareHouseService;
     }
-
     @GetMapping("goOrderChange")
-    public String goOrderChange() {
+    public String goOrderChange(){
         return "order/orderChange";
     }
 
     @GetMapping("goOrderSearch")
-    public String goOrderSearch() {
+    public String goOrderSearch(){
         return "order/orderFind";
     }
 
@@ -45,14 +43,18 @@ public class WareHouseController {
         return "warehouse/InAndOut";
     }
 
+/*
+        model.addAttribute("WareHouseList", WareHouseList);
 
+            return "/warehouse/list";
+        }*/
     @PostMapping("/inAndOut/list")
     public String inAndOutList(Model model, @RequestParam(required = false) int orderSeq, int quantity) {
         log.info("[WareHouseController] inAndOutList orderSeq: {}", orderSeq);
         log.info("[WareHouseController] inAndOutList quantity: {}", quantity);
         boolean isTrue = wareHouseService.isTrue(orderSeq);
         String result = "";
-        if (isTrue) {
+        if(isTrue){
             log.info("[WareHouseController] inAndOutList isTrue: {}", isTrue);
             int status = 1;
             int insertLog = wareHouseService.insertLog(orderSeq, status, quantity);
@@ -61,7 +63,7 @@ public class WareHouseController {
             System.out.println(quantity);
             int changedQuantity = wareHouseService.changedQuantity(orderSeq, quantity);
             result = "success";
-        } else {
+        }else {
 
         }
         return "redirect:/InAndOut";
@@ -72,38 +74,34 @@ public class WareHouseController {
     public String inAndOutMinuslist(Model model, @RequestParam(required = false) int orderSeq, int quantity) {
         boolean isTrue = wareHouseService.isTrue(orderSeq); // 테이블에 있는지 확인
         String result = "";
-        if (isTrue) {
+        if(isTrue){
             log.info("[WareHouseController] inAndOutMinuslist isTrue: {}", isTrue);
             int quantityNum = wareHouseService.quantityNum(orderSeq); // 현재수량
             int status = 2;
             int insertLog = wareHouseService.insertLog(orderSeq, status, quantity);
             quantityNum -= quantity;
             int changedQuantity = wareHouseService.changedQuantity(orderSeq, quantityNum); // 수량 변경
-        } else {
+        }else{
 
         }
         return "redirect:/InAndOut";
     }
 
     @GetMapping("accountSearch")
-    public String accountSearch() {
+    public String accountSearch(){
         return "member/members";
     }
-
     @GetMapping("email")
-    public String email() {
+    public String email(){
         return "member/mail-form";
     }
 
     @GetMapping("notice")
-    public String notice() {
+    public String notice(){
         return "board/notice";
     }
-
     @GetMapping("qna")
-    public String qna() {
+    public String qna(){
         return "board/QnA";
     }
-
-
 }
