@@ -13,4 +13,11 @@ public interface ProductService {
     List<ProductDTO> findProductList(String productName);
 
     void registNewProduct(ProductDTO newProduct);
+
+    ProductDTO findByProductSeq(int productSeq);
+
+    void update(ProductDTO updateProduct);
+
+
+    void delete(int productSeq);
 }
