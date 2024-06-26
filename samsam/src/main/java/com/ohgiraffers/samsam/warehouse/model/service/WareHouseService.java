@@ -1,11 +1,17 @@
 package com.ohgiraffers.samsam.warehouse.model.service;
 
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
+
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseLogDTO;
+
+import com.ohgiraffers.samsam.warehouse.model.dto.logDTO;
+
 
 import java.util.List;
 
 public interface WareHouseService {
+    List<logDTO> findlogs();
+
     List<WareHouseDTO> AllWareHouse(String wareHouse);
 
     //boolean inAndOut(int orderSeq, int quantity);

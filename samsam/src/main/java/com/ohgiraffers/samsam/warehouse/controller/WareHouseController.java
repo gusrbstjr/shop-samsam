@@ -1,13 +1,14 @@
 package com.ohgiraffers.samsam.warehouse.controller;
 
+import com.ohgiraffers.samsam.member.Member;
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
+import com.ohgiraffers.samsam.warehouse.model.dto.logDTO;
 import com.ohgiraffers.samsam.warehouse.model.service.WareHouseService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,12 +36,19 @@ public class WareHouseController {
      * 창고 재고조회
      */
     @GetMapping("InAndOut")
-    public String inAndOut() {
+    public String inAndOut(Model model) {
+        List<logDTO> logs = wareHouseService.findlogs();
+        model.addAttribute("logs", logs);
+        System.out.println(logs);
         return "warehouse/InAndOut";
     }
 
 
-    @GetMapping("/inAndOut/list")
+        model.addAttribute("WareHouseList", WareHouseList);
+
+            return "/warehouse/list";
+        }
+    @PostMapping("/inAndOut/list")
     public String inAndOutList(Model model, @RequestParam(required = false) int orderSeq, int quantity) {
         log.info("[WareHouseController] inAndOutList orderSeq: {}", orderSeq);
         log.info("[WareHouseController] inAndOutList quantity: {}", quantity);
@@ -58,10 +66,11 @@ public class WareHouseController {
         }else {
 
         }
-        return "warehouse/InAndOut";
+        return "redirect:/InAndOut";
     }
 
-    @GetMapping("/inAndOut/minuslist")
+
+    @PostMapping("/inAndOut/minuslist")
     public String inAndOutMinuslist(Model model, @RequestParam(required = false) int orderSeq, int quantity) {
         boolean isTrue = wareHouseService.isTrue(orderSeq); // 테이블에 있는지 확인
         String result = "";
@@ -75,7 +84,25 @@ public class WareHouseController {
         }else{
 
         }
-        return "warehouse/InAndOut";
+        return "redirect:/InAndOut";
+    }
+
+    @GetMapping("accountSearch")
+    public String accountSearch(){
+        return "member/members";
+    }
+    @GetMapping("email")
+    public String email(){
+        return "member/mail-form";
+    }
+
+    @GetMapping("notice")
+    public String notice(){
+        return "board/notice";
+    }
+    @GetMapping("qna")
+    public String qna(){
+        return "board/QnA";
     }
 
 

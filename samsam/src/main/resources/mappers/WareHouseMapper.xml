@@ -32,4 +32,15 @@
         warehouse_log (product_seq, pro_quantity, `status` )
         VALUES ( #{ productSeq }, #{ productQuantity }, #{ status } )
     </insert>
+
+    <select id="findlogs" resultMap="logMap">
+        SELECT
+        warehouse_seq,
+        product_seq,
+        pro_quantity,
+        status,
+        warehouse_date
+        FROM
+        warehouse_log
+    </select>
 </mapper>

@@ -3,6 +3,7 @@ package com.ohgiraffers.samsam.warehouse.model.service;
 import com.ohgiraffers.samsam.warehouse.model.dao.WareHouseMapper;
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseLogDTO;
+import com.ohgiraffers.samsam.warehouse.model.dto.logDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -55,4 +56,8 @@ public class WareHouseServiceImpl implements WareHouseService{
     }
 
 
+    @Override
+    public List<logDTO> findlogs() {
+        return wareHouseMapper.findlogs();
+    }
 }

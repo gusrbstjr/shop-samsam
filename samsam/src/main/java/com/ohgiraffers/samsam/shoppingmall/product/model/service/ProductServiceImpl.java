@@ -29,4 +29,20 @@ public class ProductServiceImpl implements ProductService {
         productMapper.registNewProduct(newProduct);
     }
 
+    @Override
+    public ProductDTO findByProductSeq(int productSeq) {
+        return productMapper.findByProductSeq(productSeq);
+    }
+
+    @Override
+    @Transactional
+    public void update(ProductDTO updateProduct) {
+        productMapper.update(updateProduct);
+    }
+
+    @Override
+    @Transactional
+    public void delete(int productSeq) {
+        productMapper.delete(productSeq);
+    }
 }

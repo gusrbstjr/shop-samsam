@@ -1,7 +1,11 @@
 package com.ohgiraffers.samsam.warehouse.model.dao;
 
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
+
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseLogDTO;
+
+import com.ohgiraffers.samsam.warehouse.model.dto.logDTO;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -21,5 +25,8 @@ public interface WareHouseMapper {
 
     int insertLog(int productSeq, int status, int productQuantity);
 
+
     List<WareHouseLogDTO> AllWareHouseLog(String wareHouseLog);
+
+    List<logDTO> findlogs();
 }

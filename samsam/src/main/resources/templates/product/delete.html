@@ -233,91 +233,74 @@
     </div><!-- End Page Title -->
 
     <section class="section">
-    <div class="row">
-    <div class="col-lg-12">
-    <div class="card">
-    <div class="card-body">
-    <h5 class="card-title"><b>상품 조회 , 등록 , 수정 , 삭제</b></h5>
-    <div class="text-center mt-3">
-    <div class="card">
-    <div class="card-body">
-    <div class="text-left mb-3">
-    <button type="button" class="btn btn-purple btn-lg" onclick="location.href='/product/regist'">
-    새상품 등록
-    <i class="ri-send-plane-fill ml-2"></i>
-    </button>
-    </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>상품 조회 , 등록 , 수정 , 삭제</b></h5>
+                        <div class="text-center mt-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="text-left mb-3">
+                                        <button type="button" class="btn btn-purple btn-lg" onclick="location.href='/product/regist'">
+                                            새상품 등록
+                                            <i class="ri-send-plane-fill ml-2"></i>
+                                        </button>
+                                    </div>
 
 
                                     <!-- Table with stripped rows -->
- <table class="table datatable">
- <thead>
- <tr>
-     <th>ProductNumber</th>
-     <th>ProductName</th>
-     <th data-type="date" data-format="YYYY/DD/MM">Register Date</th>
-     <th>Product Price</th>
-     <th>CategoryName</th>
-     <th>Edit   /   Delete</th>
- </tr>
- </thead>
- <tbody>
- <tr th:each="product:${productList}">
-     <td th:text="${product.productSeq}"></td>
-     <td th:text="${product.productName}"></td>
-     <td th:text="${product.registerDate}"></td>
-     <td th:text="${product.productPrice}"></td>
-     <td th:text="${product.categoryName}"></td>
-     <td>
-         <div class="d-flex">
-             <button type="button" id="edit-btn" class="btn btn-small-purple mb-2 d-flex align-items-center flex-grow-1" th:onclick="|location.href='/product/update/${product.productSeq}'|">
-                 Edit
-                 <i class="ri-edit-2-line ml-2"></i>
-             </button>
+                                    <table class="table datatable">
+                                        <thead>
+                                        <tr>
+                                            <th>ProductNumber</th>
+                                            <th>ProductName</th>
+                                            <th data-type="date" data-format="YYYY/DD/MM">Register Date</th>
+                                            <th>Product Price</th>
+                                            <th>CategoryName</th>
+                                            <th>Edit   /   Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="product:${productList}">
+                                            <td th:text="${product.productSeq}"></td>
+                                            <td th:text="${product.productName}"></td>
+                                            <td th:text="${product.registerDate}"></td>
+                                            <td th:text="${product.productPrice}"></td>
+                                            <td th:text="${product.categoryName}"></td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <button type="button" id="edit-btn" class="btn btn-small-purple mb-2 d-flex align-items-center flex-grow-1" th:onclick="|location.href='/product/update/${product.productSeq}'|">
+                                                        Edit
+                                                        <i class="ri-edit-2-line ml-2"></i>
+                                                    </button>
 
-             <button type="button" id="delete-btn" class="btn btn-small-lightpurple mb-2 d-flex align-items-center flex-grow-1" th:onclick="|location.href='/product/delete/${product.productSeq}'|">
-                 delete
-                 <i class="ri-delete-bin-line ml-2"></i>
-             </button>
-         </div>
-     </td>
- </tr>
+                                                    <button type="button" class="btn btn-small-lightpurple mb-2 d-flex align-items-center flex-grow-1" th:onclick="|deleteProduct(${product.productSeq})|">
+                                                        delete
+                                                        <i class="ri-delete-bin-line ml-2"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
 
-<!---------------- start from here ---------------->
+                                        <!---------------- start from here ---------------->
+                                        <script th:inline="javascript">
+                                            const deleteBtn = () =>{
+                                                console.log("삭제요청")
+                                                const productSeq = [[${product.productSeq}]];
+                                                location.href="/product/delete/"+productSeq
+                                            }
+                                        </script>
+                                        <!---------------- end here ---------------->
+                                        </tbody>
+                                    </table>
+                                    <!-- End Table with stripped rows -->
 
-<!---------------- end here ---------------->
-
-<!-- <script>-->
-<!--     function deleteProduct(productSeq) {-->
-<!--         if (confirm("정말 삭제하시겠습니까?")) {-->
-<!--             fetch(`/product/delete/${productSeq}`, {-->
-<!--                 method: 'DELETE',-->
-<!--                 headers: {-->
-<!--                     'Content-Type': 'application/json',-->
-<!--                     'X-CSRF-TOKEN': document.querySelector('meta[name="_csrf"]').content-->
-<!--                 }-->
-<!--             })-->
-<!--                 .then(response => {-->
-<!--                     if (response.ok) {-->
-<!--                         document.getElementById(`product-row-${productSeq}`).remove();-->
-<!--                     } else {-->
-<!--                         alert("Failed to delete product");-->
-<!--                     }-->
-<!--                 })-->
-<!--                 .catch(error => console.error('Error:', error));-->
-<!--         }-->
-<!--     }-->
-<!-- </script>-->
-
- </tbody>
-  </table>
-  <!-- End Table with stripped rows -->
-
- </div>
- </div>
- </div>
- </div>
- </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    </section>
 
 
 
