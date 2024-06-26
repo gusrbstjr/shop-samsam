@@ -19,7 +19,7 @@ public class loginController {
         this.loginService = loginService;
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public String login(Model model, @RequestParam(required = false) String username, String password) {
         boolean isLogin = loginService.isLogin(username, password);
         if (isLogin) {
