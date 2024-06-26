@@ -37,7 +37,7 @@ public class MailController {
         log.info("subject={}", subject);
         log.info("content={}", content);
 
-//        mailService.sendMail(mailRequest);
+        mailService.sendMail(mailRequest);
         Map<String, String> mailMap = new HashMap<>();
         mailMap.put("mailTitle", subject);
         mailMap.put("mailContent", content);
