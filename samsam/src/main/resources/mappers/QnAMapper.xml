@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.samsam.board.model.dao.QnAMapper">
+    <resultMap id="boardResultMap" type="com.ohgiraffers.samsam.board.model.dto.BoardDTO">
+        <id property="boardSeq" column="board_seq"/>
+        <result property="boardTitle" column="board_title"/>
+        <result property="boardContent" column="board_content"/>
+        <result property="boardSecrete" column="board_secrete"/>
+        <result property="boardDate" column="board_date"/>
+        <result property="customerSeq" column="customer_seq"/>
+        <result property="boardCategory" column="board_category"/>
+        <result property="answerContent" column="answer_content"/>
+        <result property="answerDate" column="answer_date"/>
+        <result property="answerStatus" column="answer_status"/>
+    </resultMap>
+    <select id="boardAll" resultMap="boardResultMap">
+        SELECT
+        board_seq,
+        board_title,
+        board_content,
+        board_secrete,
+        board_date,
+        customer_seq,
+        board_category,
+        answer_content,
+        answer_date,
+        answer_status
+        FROM
+        board
+        WHERE
+        board_category = 2
+    </select>
+    <select id="isAnswer" parameterType="int" resultType="_int">
+        SELECT
+        COUNT(*)
+        FROM board
+        WHERE answer_status = 0 AND board_seq = #{ boardSeq } AND board_category = 2
+    </select>
+    <update id="upLoadAnswer" parameterType="hashmap">
+        UPDATE
+        board
+        SET
+        answer_content = #{ answerContent }, answer_date = NOW() , answer_status = 1
+        WHERE board_seq = #{ boardSeq }
+    </update>
+</mapper>
