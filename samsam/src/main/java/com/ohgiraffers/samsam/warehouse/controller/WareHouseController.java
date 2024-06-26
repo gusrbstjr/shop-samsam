@@ -54,7 +54,7 @@ public class WareHouseController {
         String result = "";
         if (isTrue) {
             log.info("[WareHouseController] inAndOutList isTrue: {}", isTrue);
-            int status = 1;
+            int status = 2;
             int insertLog = wareHouseService.insertLog(orderSeq, status, quantity);
             int quantityNum = wareHouseService.quantityNum(orderSeq);
             quantity += quantityNum;
@@ -75,7 +75,7 @@ public class WareHouseController {
         if (isTrue) {
             log.info("[WareHouseController] inAndOutMinuslist isTrue: {}", isTrue);
             int quantityNum = wareHouseService.quantityNum(orderSeq); // 현재수량
-            int status = 2;
+            int status = 4;
             int insertLog = wareHouseService.insertLog(orderSeq, status, quantity);
             quantityNum -= quantity;
             int changedQuantity = wareHouseService.changedQuantity(orderSeq, quantityNum); // 수량 변경
