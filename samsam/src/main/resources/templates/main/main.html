@@ -160,12 +160,12 @@
             </a>
             <ul id="object-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                   <li>
-                      <a href="charts-chartjs.html">
+                      <a href="/warehouse/list">
                           <i class="bi bi-circle"></i><span>재고 조회</span>
                       </a>
                   </li>
                   <li>
-                      <a href="charts-apexcharts.html">
+                      <a href="warehouseLog/list">
                           <i class="bi bi-circle"></i><span>재고 내역 조회</span>
                       </a>
                   </li>
@@ -199,6 +199,67 @@
                 <div class="row">
 
                     <!-- Customers Card -->
+                    <!-- Sales Card -->
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="card info-card sales-card">
+
+
+                            <div class="card-body">
+                                <h5 class="card-title">Sales <span>| TOTAL</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-cart"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6 th:text="${sale}"></h6>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!-- End Sales Card -->
+
+                    <!-- Revenue Card -->
+                    <div class="col-xxl-4 col-md-6">
+                        <div class="card info-card revenue-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Revenue<span>| TOTAL</span></h5>
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-currency-dollar"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6 th:text="${revenueMonth}"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Revenue Card -->
+
+                    <!-- Customers Card -->
+                    <div class="col-xxl-4 col-xl-12">
+
+                        <div class="card info-card customers-card">
+
+
+                            <div class="card-body">
+                                <h5 class="card-title">Customers <span>| TOTAL</span></h5>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <h6 th:text="${customer}"></h6>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div><!-- End Customers Card -->
 
                     <!-- Reports -->
                     <div class="col-12">
@@ -218,7 +279,7 @@
                             </div>
 
                             <div class="card-body">
-                                <h5 class="card-title">Reports <span>/Today</span></h5>
+                                <h5 class="card-title">Reports <span>year</span></h5>
 
                                 <!-- Line Chart -->
                                 <div id="reportsChart"></div>
