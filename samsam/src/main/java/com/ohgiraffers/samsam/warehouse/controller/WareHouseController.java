@@ -44,10 +44,6 @@ public class WareHouseController {
     }
 
 
-        model.addAttribute("WareHouseList", WareHouseList);
-
-            return "/warehouse/list";
-        }
     @PostMapping("/inAndOut/list")
     public String inAndOutList(Model model, @RequestParam(required = false) int orderSeq, int quantity) {
         log.info("[WareHouseController] inAndOutList orderSeq: {}", orderSeq);
