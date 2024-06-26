@@ -29,7 +29,7 @@ public class loginController {
                 case "창고관리자":
                     return "main/main";
                 default:
-                    return "customer-main";
+                    return "userinterface/index";
             }
 
         }else {
