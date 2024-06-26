@@ -40,5 +40,9 @@ public class ProductServiceImpl implements ProductService {
         productMapper.update(updateProduct);
     }
 
-
+    @Override
+    @Transactional
+    public void delete(int productSeq) {
+        productMapper.delete(productSeq);
+    }
 }

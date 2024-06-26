@@ -39,4 +39,9 @@
 
         where product_seq = #{ productSeq }
     </update>
+
+    <delete id="delete">
+        delete from product
+        where product_seq = #{ productSeq }
+    </delete>
     </mapper>
