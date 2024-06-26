@@ -100,7 +100,7 @@ public class WareHouseController {
         return "board/notice";
     }
 
-    @GetMapping("qna")
+    @PostMapping("qna")
     public String qna() {
         return "board/QnA";
     }
