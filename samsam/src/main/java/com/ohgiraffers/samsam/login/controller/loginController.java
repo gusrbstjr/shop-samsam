@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -22,9 +23,18 @@ public class loginController {
     public String login(Model model, @RequestParam(required = false) String username, String password) {
         boolean isLogin = loginService.isLogin(username, password);
         if (isLogin) {
-            if (username.equals("user")) return "userinterface/index";
-            else return "main/main";
-        } else {
+            String findAccountRoll = loginService.findAccountRoll(username);
+            switch (findAccountRoll) {
+                case "쇼핑몰관리자":
+                case "창고관리자":
+                    return "main/main";
+                default:
+                    return "customer-main";
+            }
+
+        }else {
+            model.addAttribute("isError",true);
+
             return "login/login";
         }
     }

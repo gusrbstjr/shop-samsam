@@ -22,4 +22,8 @@
     <select id="isLogin" parameterType="hashmap" resultType="int">
         SELECT COUNT(*) FROM account WHERE account_id = #{ accountId } AND account_pwd = #{ accountPwd }
     </select>
+
+    <select id="findAccountRoll" parameterType="String" resultType="String">
+        SELECT account_role FROM account WHERE account_id = #{ accountId }
+    </select>
 </mapper>
