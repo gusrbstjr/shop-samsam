@@ -3,6 +3,7 @@ package com.ohgiraffers.samsam.shoppingmall.product.controller;
 import com.ohgiraffers.samsam.shoppingmall.product.model.dto.ProductDTO;
 import com.ohgiraffers.samsam.shoppingmall.product.model.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -72,7 +73,13 @@ public class ProductController {
         rttr.addFlashAttribute("successMessage","상품 수정에 성공하셨습니다.");
 
         return "redirect:/product/list";
+    }
 
+
+    @GetMapping("/delete/{productSeq}")
+    public String deleteProduct(@PathVariable int productSeq) {
+        productService.delete(productSeq);
+        return "redirect:/product/list";
     }
 }
 

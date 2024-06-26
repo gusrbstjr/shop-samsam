@@ -17,4 +17,6 @@ public interface ProductMapper {
 
     void update(ProductDTO updateProduct);
 
+
+    void delete(int productSeq);
 }
