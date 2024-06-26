@@ -213,25 +213,29 @@
                         <div class="card-body">
                             <h5 class="card-title">재고 조회</h5>
 
-                            <form action="warehouse/list" method="GET">
-                                <input type="text" name="warehouse" id="warehouse">
+                            <form action="warehouseLog/list" method="GET">
+                                <input type="text" name="warehouseLog" id="warehouseLog">
                                 <button type="submit">재고 조회</button>
                             </form>
 
                             <table class="table datatable">
                                 <thead>
                                 <tr>
-                                    <th>재고 시퀀스</th>
-                                    <th>제품 시퀀스</th>
+                                    <th>창고 입출고 번호</th>
+                                    <th>제품 번호</th>
                                     <th>수량</th>
+                                    <th>입출고 상태</th>
+                                    <th>입출고 날짜</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <tr th:each="warehouse : ${warehouseList}">
-                                    <td th:text="${warehouse.stockSeq}">No data</td>
-                                    <td th:text="${warehouse.productSeq}">No data</td>
-                                    <td th:text="${warehouse.quantity}">No data</td>
+                                <tr th:each="warehouseLog : ${wareHouseLogList}">
+                                    <td th:text="${warehouseLog.warehouse_seq}">No data</td>
+                                    <td th:text="${warehouseLog.product_seq}">No data</td>
+                                    <td th:text="${warehouseLog.pro_quantity}">No data</td>
+                                    <td th:text="${warehouseLog.statusDesc}">No data</td>
+                                    <td th:text="${warehouseLog.warehouse_date}">No data</td>
                                 </tr>
                                 </tbody>
                             </table>
