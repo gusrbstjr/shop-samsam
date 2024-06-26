@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ohgiraffers.samsam.warehouse.model.dao.WareHouseMapper">
 
-    <resultMap id="productMap" type="com.ohgiraffers.samsam.warehouse.model.dto.StockDTO">
+    <resultMap id="productMap" type="com.ohgiraffers.samsam.warehouse.model.dto.WareHouseLogDTO">
         <id property="stockSeq" column="stock_seq"/>
         <result property="stockQuantity" column="stock_quantity"/>
         <result property="productSeq" column="product_seq"/>

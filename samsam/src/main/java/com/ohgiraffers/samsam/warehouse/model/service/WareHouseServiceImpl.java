@@ -2,6 +2,7 @@ package com.ohgiraffers.samsam.warehouse.model.service;
 
 import com.ohgiraffers.samsam.warehouse.model.dao.WareHouseMapper;
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
+import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseLogDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,12 @@ public class WareHouseServiceImpl implements WareHouseService{
     public List<WareHouseDTO> AllWareHouse(String WareHouse) {
         log.info("[WareHouseImpl] AllMenu menuName {}", WareHouse);
         return wareHouseMapper.AllWareHouse(WareHouse);
+    }
+
+    @Override
+    public List<WareHouseLogDTO> AllWareHouseLog(String WareHouseLog) {
+        log.info("[WareHouseLogImpl] AllMenu menuName {}", WareHouseLog);
+        return wareHouseMapper.AllWareHouseLog(WareHouseLog);
     }
 //
 //    @Override
@@ -46,4 +53,6 @@ public class WareHouseServiceImpl implements WareHouseService{
     public int insertLog(int orderSeq, int status, int quantity) {
         return wareHouseMapper.insertLog(orderSeq, status, quantity);
     }
+
+
 }

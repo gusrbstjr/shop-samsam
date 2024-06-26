@@ -77,4 +77,6 @@ public class WareHouseController {
         }
         return "warehouse/InAndOut";
     }
+
+
 }

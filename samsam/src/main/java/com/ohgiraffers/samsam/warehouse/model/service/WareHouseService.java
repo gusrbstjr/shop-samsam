@@ -1,6 +1,7 @@
 package com.ohgiraffers.samsam.warehouse.model.service;
 
 import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO;
+import com.ohgiraffers.samsam.warehouse.model.dto.WareHouseLogDTO;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface WareHouseService {
     int changedQuantity(int orderSeq, int quantity);
 
     int insertLog(int orderSeq, int status, int quantity);
+
+    List<WareHouseLogDTO> AllWareHouseLog(String stockName);
+
 }
