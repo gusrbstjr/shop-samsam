@@ -21,6 +21,16 @@ public class WareHouseController {
     public WareHouseController(WareHouseService wareHouseService) {
         this.wareHouseService = wareHouseService;
     }
+    @GetMapping("goOrderChange")
+    public String goOrderChange(){
+        return "order/orderChange";
+    }
+
+    @GetMapping("goOrderSearch")
+    public String goOrderSearch(){
+        return "order/orderFind";
+    }
+
     /***
      * 창고 재고조회
      */
