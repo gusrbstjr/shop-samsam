@@ -104,4 +104,6 @@ public class WareHouseController {
     public String qna(){
         return "board/QnA";
     }
+
+
 }
