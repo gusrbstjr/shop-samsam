@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.samsam.warehouse.model.dao.WareHouseMapper">
+
+    <resultMap id="WareHouseResultMap" type="com.ohgiraffers.samsam.warehouse.model.dto.WareHouseDTO">
+        <id property="StockSeq" column="STOCK_SEQ"/>
+        <result property="quantity" column="STOCK_QUANTITY"/>
+        <result property="productSeq" column="PRODUCT_SEQ"/>
+    </resultMap>
+
+    <select id="AllWareHouse" resultMap="WareHouseResultMap">
+        SELECT
+        stock_seq
+        ,stock_quantity
+        ,product_seq
+        FROM
+        `stock`
+
+
+
+
+    </select>
+
+</mapper>

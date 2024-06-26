@@ -43,11 +43,6 @@ public class WareHouseController {
         return "warehouse/InAndOut";
     }
 
-    @GetMapping("/list")
-    public String list(Model model, @RequestParam(required = false) String WareHouse) {
-        log.info("[WareHouseController] list WareHouse: {}", WareHouse);
-        List<WareHouseDTO> WareHouseList = wareHouseService.AllWareHouse(WareHouse);
-        log.info("[WareHouseController] list===============\n {}", WareHouseList);
 
         model.addAttribute("WareHouseList", WareHouseList);
 
