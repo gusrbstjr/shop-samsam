@@ -17,6 +17,26 @@
     <insert id="registNewProduct">
         INSERT INTO product (product_name , register_date , product_price, category_name)
             VALUES (#{productName}, #{registerDate}, #{productPrice} ,#{categoryName} ) <!-- 필드명 -->
-
     </insert>
+
+    <select id="findByProductSeq" resultMap="productResultMap">
+        select product_seq,
+        product_name,
+        register_date,
+        product_price,
+        category_name
+        from product
+        where product_seq = #{ productSeq }
+    </select>
+
+    <update id="update">
+        update product
+        set
+            product_name = #{productName},
+            register_date = #{registerDate},
+            product_price = #{productPrice},
+            category_name = #{categoryName}
+
+        where product_seq = #{ productSeq }
+    </update>
     </mapper>
