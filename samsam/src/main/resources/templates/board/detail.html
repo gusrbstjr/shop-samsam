@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,9 +82,40 @@
             padding: 12px 20px;
             font-size: 1.25rem;
         }
+    </style>
 
-        table {
-            text-align: left;
+    <style>
+        .notice-table {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .notice-table th, .notice-table td {
+            padding: 10px;
+        }
+
+        .notice-header {
+            display: flex;
+            /* justify-content: space-between; */
+            /* align-items: center; */
+        }
+
+        .notice-header th, .notice-header td {
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .notice-contents {
+            margin-top: 20px;
+        }
+
+        #title {
+            width: 75%;
+        }
+
+        .cmdBtn {
+            margin-top: 20px;
+            margin-left: 5px;
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -254,28 +286,26 @@
                                     <div class="text-left mb-3">
                                     </div>
 
-                                    <button type="button" class="btn btn-primary" id="new">새 글 작성하기</button>
                                     <!-- Table with stripped rows -->
-                                    <table class="table datatable">
-                                        <thead>
-                                        <tr>
-                                            <th>NO</th>
+                                    <table class="notice-table">
+                                        <tr class="notice-header">
                                             <th>제목</th>
+                                            <td id="title" th:text="${board.boardTitle}"></td>
                                             <th>작성자</th>
-                                            <th>작성 날짜</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr th:each="board : ${boards}">
-                                            <td th:text="${board.boardSeq}"></td>
-                                            <td>
-                                                <a th:text="${board.boardTitle}" th:href="@{|/board/notice/detail/${board.boardSeq}|}"></a>
-                                            </td>
                                             <td th:text="${board.writer}"></td>
+                                            <th>날짜</th>
                                             <td th:text="${board.boardDate}"></td>
                                         </tr>
-                                        </tbody>
+                                        <tr class="notice-contents">
+                                            <th>본문</th>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7" th:text="${board.boardContent}"></td>
+                                        </tr>
                                     </table>
+                                    <button type="button" class="btn btn-primary cmdBtn" onclick="listRequest()">목록</button>
+                                    <button type="button" class="btn btn-primary cmdBtn" onclick="editRequest()">수정</button>
+                                    <button type="button" class="btn btn-primary cmdBtn" onclick="deleteRequest()">삭제</button>
                                     <!-- End Table with stripped rows -->
                                 </div>
                             </div>
@@ -285,7 +315,6 @@
             </div>
         </div>
     </section>
-
 </main>
 <!-- ======= Footer ======= -->
 <footer class="footer" id="footer">
@@ -318,10 +347,15 @@
 <script src="/bootstrap/assets/js/main.js"></script>
 
 <script>
-    const newBtn = document.getElementById('new');
-    newBtn.addEventListener('click', () => {
-        location.href = '/board/notice/new';
-    })
+    const listRequest = () => {
+        location.href = '/board/notice';
+    }
+    const editRequest = () => {
+        location.href = `/board/notice/update/[[${board.boardSeq}]]`;
+    }
+    const deleteRequest = () => {
+        location.href = `/board/notice/delete/[[${board.boardSeq}]]`;
+    }
 </script>
 
 </body>

@@ -81,10 +81,6 @@
             padding: 12px 20px;
             font-size: 1.25rem;
         }
-
-        table {
-            text-align: left;
-        }
     </style>
 </head>
 
@@ -254,38 +250,35 @@
                                     <div class="text-left mb-3">
                                     </div>
 
-                                    <button type="button" class="btn btn-primary" id="new">새 글 작성하기</button>
                                     <!-- Table with stripped rows -->
-                                    <table class="table datatable">
-                                        <thead>
-                                        <tr>
-                                            <th>NO</th>
-                                            <th>제목</th>
-                                            <th>작성자</th>
-                                            <th>작성 날짜</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr th:each="board : ${boards}">
-                                            <td th:text="${board.boardSeq}"></td>
-                                            <td>
-                                                <a th:text="${board.boardTitle}" th:href="@{|/board/notice/detail/${board.boardSeq}|}"></a>
-                                            </td>
-                                            <td th:text="${board.writer}"></td>
-                                            <td th:text="${board.boardDate}"></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <!-- End Table with stripped rows -->
+                                    <form th:action="@{/board/notice/new}" method="post" name="newForm">
+                                        <input type="text" id="board-writer" name="customerSeq" hidden value="1"><br>
+                                        <div class="row mb-3">
+                                            <label class="col-sm-2 col-form-label">제목</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="boardTitle" class="form-control" th:value="${board.boardTitle}">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label class="col-sm-2 col-form-label">Textarea</label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control" name="boardContent" style="height: 350px" th:text="${board.boardContent}"></textarea>
+                                            </div>
+                                            <div class="col-sm-10" style="margin-top: 50px; margin-left: 170px;">
+                                                <button type="submit" id="update-btn" class="btn btn-primary" style="margin-right: 30px">저장</button>
+                                                <button type="submit" id="back-btn" class="btn btn-primary">뒤로가기</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
-
 </main>
 <!-- ======= Footer ======= -->
 <footer class="footer" id="footer">
@@ -318,12 +311,11 @@
 <script src="/bootstrap/assets/js/main.js"></script>
 
 <script>
-    const newBtn = document.getElementById('new');
-    newBtn.addEventListener('click', () => {
-        location.href = '/board/notice/new';
+    const backBtn = document.getElementById('back-btn');
+    backBtn.addEventListener('click', () => {
+        location.href = `/board/notice/detail/[[${board.boardSeq}]]`;
     })
 </script>
-
 </body>
 
 </html>
