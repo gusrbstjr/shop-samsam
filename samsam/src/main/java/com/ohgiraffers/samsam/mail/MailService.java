@@ -7,10 +7,17 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 @RequiredArgsConstructor
 public class MailService {
     private final JavaMailSender sender;
+    private final MailMapper mailMapper;
+
+    public void save(Map<String, String> mailMap) {
+        mailMapper.save(mailMap);
+    }
 
     public void sendMail(MailRequest mailRequest) {
         String subject = mailRequest.subject();
@@ -20,8 +27,8 @@ public class MailService {
 
     public void sendMail(String to, String title, String content) {
         String from = "samsam.glasses.com";
-        if (title.isEmpty()) title = getDefaultTitle();
-        if (content.isEmpty()) content = getDefaultContent();
+        if (title == null ||  title.isEmpty()) title = getDefaultTitle();
+        if (content == null ||content.isEmpty()) content = getDefaultContent();
         send(from, to, title, content);
     }
 
@@ -160,7 +167,7 @@ public class MailService {
                                   </ul>
                                   <p>이 외에도 다양한 최신 제품들을 준비해두었습니다.<br>
                                       지금 바로 삼삼이네 안경점을 방문하여 특별한 혜택을 누리세요!</p>
-                                  <a href="http://localhost:8080/customer-main.html" class="button">지금 쇼핑하러 가기</a>
+                                  <a href="http://localhost:8080" class="button">지금 쇼핑하러 가기</a>
                               </div>
                               <div class="footer">
                                   <p>© 2024 삼삼이네 안경점. All rights reserved.</p>
@@ -172,4 +179,5 @@ public class MailService {
         """;
         return content;
     }
+
 }

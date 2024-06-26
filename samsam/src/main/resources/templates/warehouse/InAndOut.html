@@ -85,12 +85,12 @@
                 <span>Dashboard</span>
             </a>
         </li><!-- End Dashboard Nav -->
-
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
-            </a>
+                    <a class="nav-link collapsed" href="http://localhost:8080/product/list">
+                        <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
+                    </a>
         </li><!-- End Components Nav -->
+
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -139,7 +139,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="qna">
+                    <a href="http://localhost:8080/QnA">
                         <i class="bi bi-circle"></i><span>Q&A</span>
                     </a>
                 </li>
@@ -153,12 +153,12 @@
             </a>
             <ul id="object-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="charts-chartjs.html">
+                    <a href="http://localhost:8080/warehouse/list">
                         <i class="bi bi-circle"></i><span>재고 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="charts-apexcharts.html">
+                    <a href="http://localhost:8080/warehouseLog/list">
                         <i class="bi bi-circle"></i><span>재고 내역 조회</span>
                     </a>
                 </li>
@@ -260,7 +260,10 @@
                         <td th:text="${log.warehouseSeq}"></td>
                         <td th:text="${log.productSeq}"></td>
                         <td th:text="${log.productQuantity}"></td>
-                        <td th:text="${log.status}"></td>
+                          <span th:if="${log.status } == 1"><td th:text="입고대기"></td></span>
+                          <span th:if="${log.status } == 2"><td th:text="입고완료"></td></span>
+                          <span th:if="${log.status } == 3"><td th:text="출고대기"></td></span>
+                          <span th:if="${log.status } == 4"><td th:text="출고완료"></td></span>
                         <td th:text="${log.logDate}"></td>
                       </tr>
                       </tbody>
