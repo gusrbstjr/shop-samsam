@@ -25,3 +25,6 @@ server:
 mybatis:
   mapper-locations: mappers/**/*.xml
 
+logging:
+  level:
+    com.ohgiraffers: debug

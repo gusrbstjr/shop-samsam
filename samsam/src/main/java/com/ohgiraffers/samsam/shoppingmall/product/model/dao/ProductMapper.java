@@ -10,4 +10,11 @@ public interface ProductMapper {
     List<ProductDTO> findProductList(String ProductName);
 
     void registNewProduct(ProductDTO newProduct);
+
+
+    ProductDTO findByProductSeq(int productSeq);
+
+
+    void update(ProductDTO updateProduct);
+
 }
