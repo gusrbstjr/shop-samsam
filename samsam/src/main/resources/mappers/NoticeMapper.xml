@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ohgiraffers.samsam.board.notice.NoticeMapper">
+
+    <resultMap id="noticeResultMap" type="com.ohgiraffers.samsam.board.notice.Board">
+        <id property="boardSeq" column="board_seq"/>
+        <result property="boardTitle" column="board_title"/>
+        <result property="boardContent" column="board_content"/>
+        <result property="boardSecrete" column="board_secrete"/>
+        <result property="boardDate" column="board_date"/>
+        <result property="customerSeq" column="customer_seq"/>
+        <result property="boardCategory" column="board_category"/>
+        <result property="answerContent" column="answer_content"/>
+        <result property="answerDate" column="answer_date"/>
+        <result property="answerStatus" column="answer_status"/>
+        <result property="writer" column="name"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="noticeResultMap">
+        select * from board join account on board.customer_seq = account.account_seq where board_category = 1;
+    </select>
+
+    <select id="findDetailById" parameterType="_int" resultMap="noticeResultMap">
+        select board_title, board_content, board_date, board_seq, account.name as name from board
+        join account on board.customer_seq = account.account_seq
+        where board_seq = #{boardSeq};
+    </select>
+
+    <update id="update">
+        update board set board_title = #{boardTitle}, board_content = #{boardContent} where board_seq = #{boardSeq}
+    </update>
+
+    <delete id="delete">
+        delete from board where board_seq = #{boardSeq}
+    </delete>
+
+    <insert id="save">
+        insert into board (board_title, board_content, board_date, customer_seq, board_category)
+        values (#{boardTitle}, #{boardContent}, now(), #{customerSeq}, 1)
+    </insert>
+
+</mapper>

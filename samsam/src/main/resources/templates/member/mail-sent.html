@@ -76,14 +76,6 @@
       padding: 12px 20px;
       font-size: 1.25rem;
     }
-
-    .addr {
-      width: 400px;
-      margin-left: 15%;
-      margin-bottom: 10px;
-    }
-
-
   </style>
 </head>
 
@@ -246,39 +238,22 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title"><b>메일 전송</b></h5>
-
-            <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">메일 수신 고객</label>
-              <div class="col-sm-8">
-                <input type="email" id="emailInput" class="form-control" placeholder="이메일 주소를 입력하세요 ...">
-              </div>
-              <div class="col-sm-2">
-                <button onclick="addEmail()" type="button" class="btn btn-primary">추가</button>
-              </div>
-            </div>
-            <ul id="emailList" class="mb-3"></ul>
-
-            <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">제목</label>
-              <div class="col-sm-10">
-                <input type="text" id="emailSubject" name="subject" class="form-control" placeholder="제목 미입력 시 기본 제목으로 전송됩니다.">
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">내용</label>
-              <div class="col-sm-10">
-                <textarea class="form-control" id="emailContent" name="boardContent" style="height: 350px" placeholder="본문 미입력 시 기본 홍보 메일이 전송됩니다."></textarea>
-              </div>
-
-              <div class="col-sm-10" style="margin-top: 50px; margin-left: 170px;">
-                <button type="submit" id="submit-btn" onclick="sendEmails()" class="btn btn-primary" style="margin-left: 50%;">저장</button>
-              </div>
-            </div>
+            <section class="section error-404 min-vh-10 d-flex flex-column align-items-center justify-content-center">
+              <h1 style="font-size: 100px">Success</h1>
+              <h2>메일이 성공적으로 전송되었습니다.</h2>
+              <a class="btn" id="back">뒤로 가기</a>
+<!--              <img src="/bootstrap/assets/img/not-found.svg" class="img-fluid py-5" alt="Page Not Found">-->
+              <div class="credits"></div>
+            </section>
+<!--            <main>-->
+<!--              <div class="container">-->
+<!--                -->
+<!--              </div>-->
+<!--            </main>&lt;!&ndash; End #main &ndash;&gt;-->
           </div>
         </div>
       </div>
+    </div>
   </section>
 
 </main>
@@ -299,75 +274,10 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <script>
-  // JavaScript 함수들
-  var recipientsArray = [];
-
-  function addEmail() {
-    const emailInput = document.getElementById('emailInput');
-    const email = emailInput.value.trim();
-
-    if (email) {
-      recipientsArray.push(email);
-      displayRecipients();
-      emailInput.value = '';
-    }
-  }
-
-  function displayRecipients() {
-    const emailList = document.getElementById('emailList');
-    emailList.innerHTML = ''; // 기존 리스트 초기화
-
-    recipientsArray.forEach(function(email, index) {
-      const li = document.createElement('li');
-      li.className = 'list-group-item d-flex justify-content-between align-items-center addr'; // 클래스 추가
-      li.textContent = email;
-
-      // 삭제 버튼 생성 및 이벤트 핸들러 등록
-      const deleteButton = document.createElement('button');
-      deleteButton.className = 'btn btn-primary';
-      deleteButton.textContent = '삭제';
-      deleteButton.onclick = function() {
-        // 해당 인덱스의 이메일 삭제
-        recipientsArray.splice(index, 1);
-        displayRecipients(); // 변경된 리스트 다시 표시
-      };
-
-      // li 요소에 버튼 추가
-      li.appendChild(deleteButton);
-      emailList.appendChild(li);
-    });
-  }
-
-  function sendEmails() {
-    const emailContent = document.getElementById('emailContent').value;
-    const emailSubject = document.getElementById('emailSubject').value;
-
-
-    // AJAX를 사용하여 서버로 데이터 전송
-    const xhr = new XMLHttpRequest();
-    const url = '/members/mail/send'; // 서버의 컨트롤러 URL에 맞게 변경 필요
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          console.log('Emails sent successfully');
-          location.href='/members/mail-sent';
-          // 전송 성공 시 추가적인 처리 가능
-        } else {
-          console.error('Failed to send emails');
-          // 전송 실패 시 처리 가능
-        }
-      }
-    };
-
-    const data = {
-      recipients: recipientsArray,
-      content: emailContent,
-      subject: emailSubject
-    };
-    xhr.send(JSON.stringify(data));
-  }
+  const backBtn = document.getElementById('back');
+  backBtn.addEventListener('click', () => {
+    location.href = '/members/mail-form';
+  })
 </script>
 
 <!-- Vendor JS Files -->
