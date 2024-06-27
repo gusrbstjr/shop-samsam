@@ -9,14 +9,26 @@
         <result property="registerDate" column="REGISTER_DATE"/>
         <result property="productPrice" column="PRODUCT_PRICE"/>
         <result property="categoryName" column="CATEGORY_NAME"/>
+        <result property="productContent" column="PRODUCT_CONTENT"/>
+        <result property="deleteYn" column="DELETE_YN"/>
+        <association property="image" resultMap="imageResultMap"/>
     </resultMap>
+
+    <resultMap id="imageResultMap" type="com.ohgiraffers.samsam.shoppingmall.product.model.dto.ImageDTO">
+        <id property="imgSeq" column="IMG_SEQ"/>
+        <result property="productSeq" column="PRODUCT-SEQ"/>
+        <result property="imgStore" column="IMG_STORE"/>
+        <result property="storeName" column="STORENAME"/>
+        <result property="deleteYn" column="DELETE_YN"/>
+     </resultMap>
+
     <select id="findProductList" resultMap="productResultMap">
         select * from product
     </select>
 
     <insert id="registNewProduct">
-        INSERT INTO product (product_name , register_date , product_price, category_name)
-            VALUES (#{productName}, #{registerDate}, #{productPrice} ,#{categoryName} ) <!-- 필드명 -->
+        INSERT INTO product (product_name , register_date , product_price, category_name,product_content,delete_yn)
+            VALUES (#{productName}, now(), #{productPrice} ,#{categoryName} ,#{productContent},#{deleteYn}) <!-- 필드명 -->
     </insert>
 
     <select id="findByProductSeq" resultMap="productResultMap">
@@ -24,9 +36,11 @@
         product_name,
         register_date,
         product_price,
-        category_name
+        category_name,
+        product_content
         from product
         where product_seq = #{ productSeq }
+        and delete_yn = 1
     </select>
 
     <update id="update">
@@ -35,13 +49,26 @@
             product_name = #{productName},
             register_date = #{registerDate},
             product_price = #{productPrice},
-            category_name = #{categoryName}
-
+            category_name = #{categoryName},
+            product_content = #{productContent},
+            delete_yn = #{deleteYn}
         where product_seq = #{ productSeq }
     </update>
 
     <delete id="delete">
         delete from product
         where product_seq = #{ productSeq }
+        and delete_yn = 0
     </delete>
+
+    <select id="findProductDetail" resultMap="productResultMap">
+        select
+                p.product_seq, p.product_name, p.register_date,
+                p.product_price, p.category_name, p.product_content,
+                i.img_store, i.store_name
+          from  product p
+            left join img_tb i
+            on p.product_seq = i.product_seq
+        where p.product_seq = #{productNo}
+    </select>
     </mapper>

@@ -45,4 +45,10 @@ public class ProductServiceImpl implements ProductService {
     public void delete(int productSeq) {
         productMapper.delete(productSeq);
     }
+
+    @Override
+    public ProductDTO findProductDetail(int productNo) {
+
+        return productMapper.findProductDetail(productNo);
+    }
 }
