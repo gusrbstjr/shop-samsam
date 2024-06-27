@@ -33,16 +33,8 @@ public class loginController {
             switch (findAccountRoll) {
                 case "쇼핑몰관리자":
                 case "창고관리자":
-                    int revenueMonth = saleService.revenueMonth();
-                    int sale =saleService.totalSale();
-                    System.out.println("sale = " + sale);
-                    System.out.println("revenueMonth = " + revenueMonth);
-                    int customer = saleService.customer();
-                    System.out.println("customer = " + customer);
-                    model.addAttribute("customer",customer);
-                    model.addAttribute("sale",sale);
-                    model.addAttribute("revenueMonth", revenueMonth);
-                    return "main/main";
+
+                    return "redirect:/main";
                 default:
                     return "userinterface/index";
             }
