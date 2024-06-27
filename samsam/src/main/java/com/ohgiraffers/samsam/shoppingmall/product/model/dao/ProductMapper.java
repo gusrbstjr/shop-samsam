@@ -19,4 +19,6 @@ public interface ProductMapper {
 
 
     void delete(int productSeq);
+
+    ProductDTO findProductDetail(int productNo);
 }
