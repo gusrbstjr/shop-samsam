@@ -25,14 +25,11 @@
                 <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
                 <div class="menu-menu-1-container">
                     <ul id="menu-menu-1" class="menu">
-
                         <li><a href="index.html">Shop</a></li>
-
                     </ul>
                 </div>
             </nav>
         </header>
-        <!-- #masthead -->
         <div id="content" class="site-content">
             <div id="primary" class="content-area column full">
                 <main id="main" class="site-main" role="main">
@@ -61,23 +58,21 @@
                                     <div itemprop="description">
                                         <p th:text="${product.productContent}"></p>
                                     </div>
-                                        <form class="cart" method="post" enctype='multipart/form-data'>
+                                    <form class="cart" method="post" action="/purchase" enctype='multipart/form-data'>
+                                        <input type="hidden" name="productSeq" th:value="${product.productSeq}">
                                         <div class="quantity">
                                             <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"/>
                                         </div>
                                         <button type="submit" class="single_add_to_cart_button button alt">구매하기</button>
                                     </form>
                                     <div class="product_meta">
-									<span class="posted_in">Categories:
-									<a href="#" rel="tag">glasses</a>
-									</span>
+                                        <span class="posted_in">Categories:
+                                            <a href="#" rel="tag">glasses</a>
+                                        </span>
                                     </div>
                                 </div>
-                                <!-- .summary -->
                                 <div class="woocommerce-tabs wc-tabs-wrapper">
-                                    <div class="panel entry-content wc-tab" id="tab-description">
-
-                                    </div>
+                                    <div class="panel entry-content wc-tab" id="tab-description"></div>
                                     <div class="panel entry-content wc-tab" id="tab-reviews">
                                         <div id="reviews">
                                             <div id="comments">
@@ -91,14 +86,11 @@
                                                                     <strong itemprop="author">Steve</strong> &ndash; <time itemprop="datePublished" datetime="2013-06-07T15:54:25+00:00">June 7, 2024</time>:
                                                                 </p>
                                                                 <div itemprop="description" class="description">
-                                                                    <p>
-                                                                        I like the color.
-                                                                    </p>
+                                                                    <p>I like the color.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <!-- #comment-## -->
                                                     <li itemprop="review" itemscope itemtype="http://schema.org/Review" class="comment">
                                                         <div id="comment-4" class="comment_container">
                                                             <img alt='' src='http://2.gravatar.com/avatar/59c82b1d2c60537f900fb191b3cb611b?s=60&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/59c82b1d2c60537f900fb191b3cb611b?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60'/>
@@ -107,49 +99,31 @@
                                                                     <strong itemprop="author">Maria</strong> &ndash; <time itemprop="datePublished" datetime="2013-06-07T15:54:25+00:00">June 7, 2024</time>:
                                                                 </p>
                                                                 <div itemprop="description" class="description">
-                                                                    <p>
-                                                                        what a amazing glasses!!!!bbaaammmmm!!
-                                                                    </p>
+                                                                    <p>what a amazing glasses!!!!bbaaammmmm!!</p>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </li>
-                                                    <!-- #comment-## -->
                                                 </ol>
                                             </div>
-
-                                            <!-- #respond -->
                                         </div>
                                     </div>
-                                    <div class="clear">
-                                    </div>
+                                    <div class="clear"></div>
                                 </div>
                             </div>
                         </div>
-
                 </main>
-                <!-- #main -->
             </div>
-            <!-- #primary -->
         </div>
-        <!-- #content -->
     </div>
-    <!-- .container -->
     <footer id="colophon" class="site-footer">
         <div class="container">
             <div class="site-info">
                 <h1 style="font-family: 'Herr Von Muellerhoff';color: #ccc;font-weight:300;text-align: center;margin-bottom:0;margin-top:0;line-height:1.4;font-size: 46px;">SamSam</h1>
-                made by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">Samsam</a>
-
+                made by <i class="fa fa-love"></i><a href="https://bootstrapbay.com/user/ShapedTheme/portfolio">ShapedTheme</a>.
             </div>
         </div>
     </footer>
-    <a href="#top" class="smoothup" title="Back to top"><span class="genericon genericon-collapse"></span></a>
 </div>
-<!-- #page -->
-<script src='/js/userinterface/jquery.js'></script>
-<script src='/js/userinterface/plugins.js'></script>
-<script src='/js/userinterface/scripts.js'></script>
-<script src='/js/userinterface/masonry.pkgd.min.js'></script>
 </body>
 </html>

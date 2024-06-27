@@ -13,15 +13,15 @@
 
     <!-- 구매 수량 업데이트 -->
     <update id="updatePurchaseQuantity">
-        UPDATE order
-        SET order_quantity = order_quantity + #{orderQuantity}
+        UPDATE `order`
+        SET order_quantity = order_quantity + #{quantity}
         WHERE product_seq = #{productSeq}
     </update>
 
     <!-- 총 결제 금액 업데이트 -->
     <update id="updateTotalPurchaseAmount">
-        UPDATE order
-        SET total_price = total_price + #{totalPrice}
+        UPDATE `order`
+        SET total_price = #{totalAmount}
         WHERE product_seq = #{productSeq}
     </update>
 </mapper>
