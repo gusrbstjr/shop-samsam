@@ -47,12 +47,12 @@ public class StockController {
             List<WareHouseLogDTO> wareHouseLogList = wareHouseService.AllWareHouseLog(stockName);
             System.out.println("===== get list : " + wareHouseLogList);
 
-            for (WareHouseLogDTO wareHouseLogDTO : wareHouseLogList) {
-                if(wareHouseLogDTO.getStatus() == 1) wareHouseLogDTO.setStatusDesc("입고대기");
-                else if (wareHouseLogDTO.getStatus() == 2) wareHouseLogDTO.setStatusDesc("입고완료");
-                else if (wareHouseLogDTO.getStatus() == 3) wareHouseLogDTO.setStatusDesc("출고대기");
-                else if (wareHouseLogDTO.getStatus() == 4) wareHouseLogDTO.setStatusDesc("출고완료");
-            }
+//            for (WareHouseLogDTO wareHouseLogDTO : wareHouseLogList) {
+//                if(wareHouseLogDTO.getStatus() == 1) wareHouseLogDTO.setStatusDesc("입고대기");
+//                else if (wareHouseLogDTO.getStatus() == 2) wareHouseLogDTO.setStatusDesc("입고완료");
+//                else if (wareHouseLogDTO.getStatus() == 3) wareHouseLogDTO.setStatusDesc("출고대기");
+//                else if (wareHouseLogDTO.getStatus() == 4) wareHouseLogDTO.setStatusDesc("출고완료");
+//            }
 
             model.addAttribute("wareHouseLogList", wareHouseLogList);
 
