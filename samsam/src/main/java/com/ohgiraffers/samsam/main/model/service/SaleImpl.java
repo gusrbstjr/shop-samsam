@@ -14,17 +14,17 @@ public class SaleImpl implements SaleService {
     }
 
     @Override
-    public int revenueMonth() {
+    public Integer revenueMonth() {
         return saleMapper.revenueMonth();
     }
 
     @Override
-    public int totalSale() {
+    public Integer totalSale() {
         return saleMapper.totalSale();
     }
 
     @Override
-    public int customer() {
+    public Integer customer() {
         return saleMapper.customer();
     }
 

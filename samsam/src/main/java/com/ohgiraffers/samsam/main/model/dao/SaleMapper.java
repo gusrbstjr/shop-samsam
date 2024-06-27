@@ -4,10 +4,10 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface SaleMapper {
-    int revenueMonth();
+    Integer revenueMonth();
 
-    int totalSale();
+    Integer totalSale();
 
-    int customer();
+    Integer customer();
 
 }
