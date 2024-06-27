@@ -3,9 +3,9 @@ package com.ohgiraffers.samsam.main.model.service;
 
 
 public interface SaleService {
-    int revenueMonth();
+    Integer revenueMonth();
 
-    int totalSale();
+    Integer totalSale();
 
-    int customer();
+    Integer customer();
 }
