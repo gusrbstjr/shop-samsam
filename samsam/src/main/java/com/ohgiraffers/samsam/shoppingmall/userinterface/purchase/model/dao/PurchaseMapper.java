@@ -8,13 +8,10 @@ import java.util.List;
 
 @Mapper
 public interface PurchaseMapper {
-    List<PurchaseDTO> findPurchasesByProduct(int productSeq);
 
+    Integer findProductPriceById(int productSeq);
 
     void updatePurchaseQuantity(int productSeq, int quantity);
 
-    Integer findProductPriceById(@Param("productSeq") int productSeq);
-
     void updateTotalPurchaseAmount(int productSeq, int totalAmount);
-
 }
