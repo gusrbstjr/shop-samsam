@@ -5,4 +5,5 @@ public interface loginService {
 
     String findAccountRoll(String username);
 
+    int findSeq(String username);
 }

@@ -11,10 +11,9 @@
         WHERE product_seq = #{productSeq}
     </select>
 
-
     <!-- 새로운 구매 등록 -->
     <insert id="insertPurchase">
-        INSERT INTO order(
+        INSERT INTO `order` (
         customer_seq,
         product_seq,
         total_price,
@@ -24,7 +23,7 @@
         ) VALUES (
         #{customerSeq},
         #{productSeq},
-        #{totalAmount},
+        #{totalPrice},
         NOW(),
         #{orderStatus},
         #{quantity}

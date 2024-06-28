@@ -37,6 +37,4 @@ public class PurchaseServiceImpl implements PurchaseService {
             throw new RuntimeException("구매 중 오류가 발생했습니다.");
         }
     }
-
-
 }

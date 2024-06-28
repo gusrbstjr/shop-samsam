@@ -9,4 +9,6 @@ public interface loginMapper {
     int isLogin(Map<String, String> map);
 
     String findAccountRoll(String accountId);
+
+    int findSeq(String accountId);
 }

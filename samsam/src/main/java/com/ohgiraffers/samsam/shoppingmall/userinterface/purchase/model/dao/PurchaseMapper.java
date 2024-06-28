@@ -1,15 +1,16 @@
 package com.ohgiraffers.samsam.shoppingmall.userinterface.purchase.model.dao;
 
-import com.ohgiraffers.samsam.shoppingmall.userinterface.purchase.model.PurchaseDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 @Mapper
 public interface PurchaseMapper {
 
-    Integer findProductPriceById(int productSeq);
+    Integer findProductPriceById(@Param("productSeq") int productSeq);
 
-    void insertPurchase(int customerSeq, int productSeq, int totalAmount, String orderStatus, int quantity);
+    void insertPurchase(@Param("customerSeq") int customerSeq,
+                        @Param("productSeq") int productSeq,
+                        @Param("totalPrice") int totalPrice,
+                        @Param("orderStatus") String orderStatus,
+                        @Param("quantity") int quantity);
 }

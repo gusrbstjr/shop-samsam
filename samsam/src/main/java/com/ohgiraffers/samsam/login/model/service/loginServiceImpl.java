@@ -29,5 +29,8 @@ public class loginServiceImpl implements loginService {
         return loginMapper.findAccountRoll(accountId);
     }
 
-
+    @Override
+    public int findSeq(String username) {
+        return loginMapper.findSeq(username);
+    }
 }
