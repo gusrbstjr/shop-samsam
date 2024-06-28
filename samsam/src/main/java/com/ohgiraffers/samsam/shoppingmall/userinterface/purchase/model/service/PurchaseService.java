@@ -5,6 +5,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface PurchaseService {
 
-    void processPurchase(int productSeq, int quantity);
+    void processPurchase(int productSeq, int quantity, int customerSeq);
 
 }

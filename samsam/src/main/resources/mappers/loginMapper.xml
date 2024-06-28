@@ -26,4 +26,5 @@
     <select id="findAccountRoll" parameterType="String" resultType="String">
         SELECT account_role FROM account WHERE account_id = #{ accountId }
     </select>
+
 </mapper>

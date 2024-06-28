@@ -4,4 +4,5 @@ public interface loginService {
     boolean isLogin(String id, String pwd);
 
     String findAccountRoll(String username);
+
 }

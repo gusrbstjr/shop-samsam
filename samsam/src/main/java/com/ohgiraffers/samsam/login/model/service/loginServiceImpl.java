@@ -28,4 +28,6 @@ public class loginServiceImpl implements loginService {
     public String findAccountRoll(String accountId) {
         return loginMapper.findAccountRoll(accountId);
     }
+
+
 }

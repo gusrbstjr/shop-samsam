@@ -17,7 +17,7 @@ public class PurchaseServiceImpl implements PurchaseService {
 
     @Override
     @Transactional
-    public void processPurchase(int productSeq, int quantity) {
+    public void processPurchase(int customerSeq, int productSeq, int quantity) {
         try {
             // 상품 가격 조회
             int pricePerUnit = purchaseMapper.findProductPriceById(productSeq);
@@ -25,11 +25,11 @@ public class PurchaseServiceImpl implements PurchaseService {
             // 결제 금액 계산
             int totalAmount = quantity * pricePerUnit;
 
-            // 총 구매 수량 업데이트
-            purchaseMapper.updatePurchaseQuantity(productSeq, quantity);
+            // 주문 상태
+            String orderStatus = "결제완료";
 
-            // 총 결제 금액 업데이트
-            purchaseMapper.updateTotalPurchaseAmount(productSeq, totalAmount);
+            // 새로운 구매 등록
+            purchaseMapper.insertPurchase(customerSeq, productSeq, totalAmount, orderStatus, quantity);
 
             log.info("구매가 성공적으로 완료되었습니다.");
         } catch (Exception e) {
@@ -37,4 +37,6 @@ public class PurchaseServiceImpl implements PurchaseService {
             throw new RuntimeException("구매 중 오류가 발생했습니다.");
         }
     }
+
+
 }

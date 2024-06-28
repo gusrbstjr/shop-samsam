@@ -11,7 +11,5 @@ public interface PurchaseMapper {
 
     Integer findProductPriceById(int productSeq);
 
-    void updatePurchaseQuantity(int productSeq, int quantity);
-
-    void updateTotalPurchaseAmount(int productSeq, int totalAmount);
+    void insertPurchase(int customerSeq, int productSeq, int totalAmount, String orderStatus, int quantity);
 }
