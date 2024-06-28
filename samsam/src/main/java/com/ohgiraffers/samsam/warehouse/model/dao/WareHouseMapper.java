@@ -29,4 +29,6 @@ public interface WareHouseMapper {
     List<WareHouseLogDTO> AllWareHouseLog(String wareHouseLog);
 
     List<logDTO> findlogs();
+
+    void updateLog(int productSeq, int productQuantity);
 }

@@ -26,4 +26,5 @@ public interface WareHouseService {
 
     List<WareHouseLogDTO> AllWareHouseLog(String stockName);
 
+    void updateLog(int productSeq, int quantity);
 }
