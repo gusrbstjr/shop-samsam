@@ -2,13 +2,11 @@ package com.ohgiraffers.samsam.board.controller;
 
 import com.ohgiraffers.samsam.board.model.dto.BoardDTO;
 import com.ohgiraffers.samsam.board.model.service.QnAService;
-import com.ohgiraffers.samsam.order.model.service.OrderFindService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -34,10 +32,10 @@ public class QnAController {
     public String QnAAnswer(Model model, @RequestParam(required = false) int boardSeq, String answerContent) {
         int isAnswer = qnAService.isAnswer(boardSeq);
         log.info("isAnswer: " + isAnswer);
-        if(isAnswer == 1){
-            int upLoadAnswer = qnAService.upLoadAnswer(boardSeq,answerContent);
+        if (isAnswer == 1) {
+            int upLoadAnswer = qnAService.upLoadAnswer(boardSeq, answerContent);
 
-        }else{
+        } else {
             model.addAttribute("isError", true);
             return "board/QnA";
         }
