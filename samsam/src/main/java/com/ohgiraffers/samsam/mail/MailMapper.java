@@ -8,4 +8,5 @@ import java.util.Map;
 public interface MailMapper {
 
     void save(Map<String, String> mailMap);
+
 }

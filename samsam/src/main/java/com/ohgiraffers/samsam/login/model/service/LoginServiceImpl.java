@@ -1,6 +1,6 @@
 package com.ohgiraffers.samsam.login.model.service;
 
-import com.ohgiraffers.samsam.login.model.dao.loginMapper;
+import com.ohgiraffers.samsam.login.model.dao.LoginMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +9,10 @@ import java.util.Map;
 
 @Service
 @Slf4j
-public class loginServiceImpl implements loginService {
-    private final loginMapper loginMapper;
+public class LoginServiceImpl implements LoginService {
+    private final LoginMapper loginMapper;
 
-    public loginServiceImpl(com.ohgiraffers.samsam.login.model.dao.loginMapper loginMapper) {
+    public LoginServiceImpl(LoginMapper loginMapper) {
         this.loginMapper = loginMapper;
     }
 
@@ -21,7 +21,7 @@ public class loginServiceImpl implements loginService {
         Map<String, String> map = new HashMap<>();
         map.put("accountId", id);
         map.put("accountPwd", pwd);
-        return loginMapper.isLogin(map) == 1 ? true : false;
+        return loginMapper.isLogin(map) == 1;
     }
 
     @Override
