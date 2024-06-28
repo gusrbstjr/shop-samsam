@@ -273,7 +273,7 @@
               </div>
 
               <div class="col-sm-10" style="margin-top: 50px; margin-left: 170px;">
-                <button type="submit" id="submit-btn" onclick="sendEmails()" class="btn btn-primary" style="margin-left: 50%;">저장</button>
+                <button type="submit" id="submit-btn" onclick="sendEmails()" class="btn btn-primary" style="margin-left: 50%;">전송</button>
               </div>
             </div>
           </div>
@@ -342,6 +342,9 @@
     const emailContent = document.getElementById('emailContent').value;
     const emailSubject = document.getElementById('emailSubject').value;
 
+    const submitBtn = document.getElementById('submit-btn');
+    submitBtn.disabled = true; // 버튼 비활성화
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 전송중';
 
     // AJAX를 사용하여 서버로 데이터 전송
     const xhr = new XMLHttpRequest();
