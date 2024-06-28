@@ -15,7 +15,8 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="/bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,11 +42,11 @@
 <body>
 
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center">
+<header class="header fixed-top d-flex align-items-center" id="header">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="main.html" class="logo d-flex align-items-center">
-            <img src="assets/img/logo.png" alt="">
+        <a class="logo d-flex align-items-center" href="main.html">
+            <img alt="" src="assets/img/logo.png">
             <span class="d-none d-lg-block">SAMSAM-ADMIN</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -57,8 +58,8 @@
 
             <li class="nav-item dropdown pe-3">
 
-                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown" href="#">
+                    <img alt="Profile" class="rounded-circle" src="assets/img/profile-img.jpg">
                     <span class="d-none d-md-block dropdown-toggle ps-2">SAMSAM-OWNER</span>
                 </a><!-- End Profile Iamge Icon -->
 
@@ -82,7 +83,7 @@
 </header><!-- End Header -->
 
 <!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
+<aside class="sidebar" id="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
@@ -94,7 +95,7 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" href="/product/list">
                 <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
             </a>
         </li><!-- End Components Nav -->
@@ -103,14 +104,14 @@
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-journal-text"></i><span>회원 관리</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="forms-nav">
                 <li>
-                    <a href="forms-elements.html">
+                    <a href="/members">
                         <i class="bi bi-circle"></i><span>회원 목록 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="forms-layouts.html">
+                    <a href="/members/mail-form">
                         <i class="bi bi-circle"></i><span>메일</span>
                     </a>
                 </li>
@@ -119,9 +120,10 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-layout-text-window-reverse"></i><span>주문 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+                <i class="bi bi-layout-text-window-reverse"></i><span>주문 관리</span><i
+                    class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="tables-nav">
                 <li>
                     <a href="/orderChange/list">
                         <i class="bi bi-circle"></i><span>주문 변경</span>
@@ -139,14 +141,14 @@
             <a class="nav-link collapsed" data-bs-target="#board-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-bar-chart"></i><span>게시판</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="board-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="board-nav">
                 <li>
-                    <a href="charts-chartjs.html">
+                    <a href="/board/notice">
                         <i class="bi bi-circle"></i><span>공지사항</span>
                     </a>
                 </li>
                 <li>
-                    <a href="charts-apexcharts.html">
+                    <a href="/QnA">
                         <i class="bi bi-circle"></i><span>Q&A</span>
                     </a>
                 </li>
@@ -158,28 +160,29 @@
             <a class="nav-link collapsed" data-bs-target="#object-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-bar-chart"></i><span>상품</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="object-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul class="nav-content collapse " data-bs-parent="#sidebar-nav" id="object-nav">
                 <li>
-                    <a href="charts-chartjs.html">
+                    <a href="/warehouse/list">
                         <i class="bi bi-circle"></i><span>재고 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="charts-apexcharts.html">
+                    <a href="/warehouseLog/list">
                         <i class="bi bi-circle"></i><span>재고 내역 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="charts-apexcharts.html">
+                    <a href="/InAndOut">
                         <i class="bi bi-circle"></i><span>입/출고</span>
                     </a>
                 </li>
             </ul>
         </li><!-- End Profile Page Nav -->
     </ul>
-</aside><!-- End Sidebar-->
+</aside>
+<!-- End Sidebar-->
 
-<main id="main" class="main">
+<main class="main" id="main">
 
     <div class="pagetitle">
         <h1>General Tables</h1>
@@ -196,10 +199,10 @@
         <div class="row">
             <div class="col-lg-12">
 
-<!--                <form action="/orderChange/list">-->
-<!--                    <input type="text" name="ordersequence" id="ordersequence">-->
-<!--                    <button type="submit">주문 시퀀스 키를 입력하시오.</button>-->
-<!--                </form>-->
+                <!--                <form action="/orderChange/list">-->
+                <!--                    <input type="text" name="ordersequence" id="ordersequence">-->
+                <!--                    <button type="submit">주문 시퀀스 키를 입력하시오.</button>-->
+                <!--                </form>-->
                 <table class="table datatable">
                     <thead>
                     <tr>
@@ -212,7 +215,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="order : ${orderList}"  th:data-url="@{'/orderChangeSelect/detail/' + ${order.order_seq}}">
+                    <tr th:data-url="@{'/orderChangeSelect/detail/' + ${order.order_seq}}"
+                        th:each="order : ${orderList}">
                         <td th:text="${order.order_seq}">No data</td>
                         <td th:text="${order.order_status}">No data</td>
                         <td th:text="${order.register_date}">No data</td>
@@ -232,7 +236,7 @@
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
+<footer class="footer" id="footer">
     <div class="copyright">
         &copy; Copyright <strong><span>SAMSAM-ADMIN</span></strong>. All Rights Reserved
     </div>
@@ -245,7 +249,8 @@
     </div>
 </footer><!-- End Footer -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<a class="back-to-top d-flex align-items-center justify-content-center" href="#"><i
+        class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
 <script src="/bootstrap/assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -260,16 +265,16 @@
 <script src="/bootstrap/assets/js/main.js"></script>
 <!--이건 내가 -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.clickable').forEach(item => {
-        item.addEventListener('click', event => {
-            if (event.target.textContent === '결제완료') {
-                event.target.textContent = '배송완료';
-            }
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.clickable').forEach(item => {
+            item.addEventListener('click', event => {
+                if (event.target.textContent === '결제완료') {
+                    event.target.textContent = '배송완료';
+                }
+            });
         });
-    });
 
-});
+    });
 
 
     document.addEventListener('DOMContentLoaded', (event) => {
