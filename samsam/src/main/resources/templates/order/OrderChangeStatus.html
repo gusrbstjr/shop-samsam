@@ -5,11 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>SAMSAM PRODUCT</title>
+  <title>Tables / General - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   <!-- Favicons -->
   <link href="/bootstrap/assets/img/favicon.png" rel="icon">
@@ -17,7 +15,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i%7CNunito:300,300i,400,400i,600,600i,700,700i%7CPoppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="/bootstrap/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -38,53 +36,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    .btn-small-purple {
-      background-color: purple;
-      color: white;
-      transform: scale(0.7); /* 크기를 반으로 줄임 */
-      border: none;
-    }
-    .btn-small-purple .badge {
-      background-color: white;
-      color: purple;
-    }
-    .btn-small-lightpurple {
-      background-color: #D8BFD8; /* 연보라색 */
-      color: black;
-      transform: scale(0.7); /* 크기를 반으로 줄임 */
-      border: none;
-    }
-    .btn-small-lightpurple .badge {
-      background-color: white;
-      color: #D8BFD8;
-    }
-    .btn-purple {
-      background-color: #955BA5;
-      color: white;
-      border: black;
-    }
-
-    .btn-purple:hover {
-      background-color: #bd93f9;
-      color: white;
-    }
-
-    .btn-purple.btn-lg {
-      padding: 12px 20px;
-      font-size: 1.25rem;
-    }
-
-    .addr {
-      width: 400px;
-      margin-left: 15%;
-      margin-bottom: 10px;
-    }
-
-
-  </style>
 </head>
 
 <body>
@@ -93,7 +44,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
-    <a href="" class="logo d-flex align-items-center">
+    <a href="main.html" class="logo d-flex align-items-center">
       <img src="assets/img/logo.png" alt="">
       <span class="d-none d-lg-block">SAMSAM-ADMIN</span>
     </a>
@@ -143,7 +94,7 @@
     </li><!-- End Dashboard Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="/product/list">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
       </a>
     </li><!-- End Components Nav -->
@@ -154,12 +105,12 @@
       </a>
       <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="/members">
+          <a href="forms-elements.html">
             <i class="bi bi-circle"></i><span>회원 목록 조회</span>
           </a>
         </li>
         <li>
-          <a href="/members/mail-form">
+          <a href="forms-layouts.html">
             <i class="bi bi-circle"></i><span>메일</span>
           </a>
         </li>
@@ -172,7 +123,7 @@
       </a>
       <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="/OrderChange.html">
+          <a href="/orderChange/list">
             <i class="bi bi-circle"></i><span>주문 변경</span>
           </a>
         </li>
@@ -190,12 +141,12 @@
       </a>
       <ul id="board-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="/board/notice">
+          <a href="charts-chartjs.html">
             <i class="bi bi-circle"></i><span>공지사항</span>
           </a>
         </li>
         <li>
-          <a href="/QnA">
+          <a href="charts-apexcharts.html">
             <i class="bi bi-circle"></i><span>Q&A</span>
           </a>
         </li>
@@ -209,34 +160,34 @@
       </a>
       <ul id="object-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="/warehouse/list">
+          <a href="charts-chartjs.html">
             <i class="bi bi-circle"></i><span>재고 조회</span>
           </a>
         </li>
         <li>
-          <a href="/warehouseLog/list">
+          <a href="charts-apexcharts.html">
             <i class="bi bi-circle"></i><span>재고 내역 조회</span>
           </a>
         </li>
         <li>
-          <a href="/InAndOut">
+          <a href="charts-apexcharts.html">
             <i class="bi bi-circle"></i><span>입/출고</span>
           </a>
         </li>
       </ul>
     </li><!-- End Profile Page Nav -->
   </ul>
-</aside>
-<!-- End Sidebar-->
+</aside><!-- End Sidebar-->
 
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>MEMBER</h1>
+    <h1>General Tables</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Mail</li>
+        <li class="breadcrumb-item">Tables</li>
+        <li class="breadcrumb-item active">General</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -244,44 +195,37 @@
   <section class="section">
     <div class="row">
       <div class="col-lg-12">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><b>메일 전송</b></h5>
 
-            <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">메일 수신 고객</label>
-              <div class="col-sm-8">
-                <input type="email" id="emailInput" class="form-control" placeholder="이메일 주소를 입력하세요 ...">
-              </div>
-              <div class="col-sm-2">
-                <button onclick="addEmail()" type="button" class="btn btn-primary">추가</button>
-              </div>
-            </div>
-            <ul id="emailList" class="mb-3"></ul>
-
-            <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">제목</label>
-              <div class="col-sm-10">
-                <input type="text" id="emailSubject" name="subject" class="form-control" placeholder="제목 미입력 시 기본 제목으로 전송됩니다.">
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <label class="col-sm-2 col-form-label">내용</label>
-              <div class="col-sm-10">
-                <textarea class="form-control" id="emailContent" name="boardContent" style="height: 350px" placeholder="본문 미입력 시 기본 홍보 메일이 전송됩니다."></textarea>
-              </div>
-
-              <div class="col-sm-10" style="margin-top: 50px; margin-left: 170px;">
-                <button type="submit" id="submit-btn" onclick="sendEmails()" class="btn btn-primary" style="margin-left: 50%;">전송</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <table class="table datatable">
+          <thead>
+          <tr>
+            <th>주문시퀀스</th>
+            <th>주문 상태</th>
+            <th>등록일</th>
+            <th>총 결제 금액</th>
+            <th>제품시퀀스</th>
+            <th>고객시퀀스키</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td th:text="${status.order_seq}">No data</td>
+            <td th:text="${status.order_status}">No data</td>
+            <td th:text="${status.register_date}">No data</td>
+            <td th:text="${status.total_price}">No data</td>
+            <td th:text="${status.product_seq}">No data</td>
+            <td th:text="${status.customer_seq}">No data</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
+      <!-- End small tables -->
+    </div>
   </section>
 
-</main>
+
+</main><!-- End #main -->
+
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
   <div class="copyright">
@@ -298,81 +242,6 @@
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<script>
-  // JavaScript 함수들
-  var recipientsArray = [];
-
-  function addEmail() {
-    const emailInput = document.getElementById('emailInput');
-    const email = emailInput.value.trim();
-
-    if (email) {
-      recipientsArray.push(email);
-      displayRecipients();
-      emailInput.value = '';
-    }
-  }
-
-  function displayRecipients() {
-    const emailList = document.getElementById('emailList');
-    emailList.innerHTML = ''; // 기존 리스트 초기화
-
-    recipientsArray.forEach(function(email, index) {
-      const li = document.createElement('li');
-      li.className = 'list-group-item d-flex justify-content-between align-items-center addr'; // 클래스 추가
-      li.textContent = email;
-
-      // 삭제 버튼 생성 및 이벤트 핸들러 등록
-      const deleteButton = document.createElement('button');
-      deleteButton.className = 'btn btn-primary';
-      deleteButton.textContent = '삭제';
-      deleteButton.onclick = function() {
-        // 해당 인덱스의 이메일 삭제
-        recipientsArray.splice(index, 1);
-        displayRecipients(); // 변경된 리스트 다시 표시
-      };
-
-      // li 요소에 버튼 추가
-      li.appendChild(deleteButton);
-      emailList.appendChild(li);
-    });
-  }
-
-  function sendEmails() {
-    const emailContent = document.getElementById('emailContent').value;
-    const emailSubject = document.getElementById('emailSubject').value;
-
-    const submitBtn = document.getElementById('submit-btn');
-    submitBtn.disabled = true; // 버튼 비활성화
-    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> 전송중';
-
-    // AJAX를 사용하여 서버로 데이터 전송
-    const xhr = new XMLHttpRequest();
-    const url = '/members/mail/send'; // 서버의 컨트롤러 URL에 맞게 변경 필요
-    xhr.open('POST', url, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          console.log('Emails sent successfully');
-          location.href='/members/mail-sent';
-          // 전송 성공 시 추가적인 처리 가능
-        } else {
-          console.error('Failed to send emails');
-          // 전송 실패 시 처리 가능
-        }
-      }
-    };
-
-    const data = {
-      recipients: recipientsArray,
-      content: emailContent,
-      subject: emailSubject
-    };
-    xhr.send(JSON.stringify(data));
-  }
-</script>
-
 <!-- Vendor JS Files -->
 <script src="/bootstrap/assets/vendor/apexcharts/apexcharts.min.js"></script>
 <script src="/bootstrap/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -382,7 +251,6 @@
 <script src="/bootstrap/assets/vendor/simple-datatables/simple-datatables.js"></script>
 <script src="/bootstrap/assets/vendor/tinymce/tinymce.min.js"></script>
 <script src="/bootstrap/assets/vendor/php-email-form/validate.js"></script>
-
 <!-- Template Main JS File -->
 <script src="/bootstrap/assets/js/main.js"></script>
 

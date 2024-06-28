@@ -42,6 +42,7 @@
 
 					<li class="first product">
 						<span class="onsale">Sale!</span>
+						<input type="hidden" th:value="1"/>
 						<img id="yoonjiProduct" src="https://i.ibb.co/ncsL0sG/image.jpg" alt="image" border="0">
 						<h3>yoonji glasses</h3>
 						<span class="price"><span class="amount">340,000원</span></span>
@@ -49,24 +50,26 @@
 
 					<script>
 						document.getElementById('yoonjiProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/yoonji-shop-single';
+							window.location.href = '/product/detail/1';
 						});
 					</script>
 
 
 					<li class="product">
+						<input type="hidden" th:value="2"/>
 					<img id="changyeonProduct" src="https://i.ibb.co/TPyYqNJ/image.jpg" alt="image" border="0"></a>
 					<h3>changyeon glasses</h3>
 					<span class="price"><span class="amount">600,000원</span></span>
 					</li>
 					<script>
 						document.getElementById('changyeonProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/changyeon-shop-single';
+							window.location.href = '/product/detail/2';
 						});
 					</script>
 					
 					<li class="product">
 						<span class="onsale">super good!</span>
+						<input type="hidden" th:value="3"/>
 					<img id="seungjaeProduct" src="https://i.ibb.co/ckh34cv/image.jpg" alt="image" border="0"></a>
 					<h3>seungjae glasses</h3>
 					<span class="price"><span class="amount">1,250,000원</span></span>
@@ -74,62 +77,67 @@
 
 					<script>
 						document.getElementById('seungjaeProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/seungjae-shop-single';
+							window.location.href = '/product/detail/3';
 						});
 					</script>
 					
 					<li class="last product">
+						<input type="hidden" th:value="4"/>
 					<img id="jeonghunProduct" src="https://i.ibb.co/7CdhzT0/image.jpg" alt=""></a>
 					<h3>jeonghun glasses</h3>
 					<span class="price"><span class="amount">280,000원</span></span>
 					</li>
 					<script>
 						document.getElementById('jeonghunProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/jeonghun-shop-single';
+							window.location.href = '/product/detail/4';
 						});
 					</script>
 					
 					<li class="first product">
+						<input type="hidden" th:value="5"/>
 					<img id="yoonjungProduct" src="https://i.ibb.co/gykFztt/image.jpg" alt="image" border="0"></a>
 					<h3>yoonjung glasses</h3>
 					<span class="price"><span class="amount">150,000원</span></span>
 					</li>
 					<script>
 						document.getElementById('yoonjungProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/yoonjung-shop-single';
+							window.location.href = '/product/detail/5';
 						});
 					</script>
 					
 					<li class="product">
+						<input type="hidden" th:value="6"/>
 					<img id="hyunkyunProduct" src="https://i.ibb.co/nckhNg8/image.jpg" alt="image" border="0"></a>
 					<h3>hyunkyun glasses</h3>
 					<span class="price"><span class="amount">160,000원</span></span>
 					</li>
 					<script>
 						document.getElementById('hyunkyunProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/hyunkyun-shop-single';
+							window.location.href = '/product/detail/6';
 						});
 					</script>
 
 					<li class="product">
+						<input type="hidden" th:value="7"/>
 					<img id="loveProduct" src="https://i.ibb.co/ZX6yPZp/love.jpg" alt="love" border="0"></a>
 					<h3>love glasses</h3>
 					<span class="price"><span class="amount">360,000원</span></span>
 					</li>
 					<script>
 						document.getElementById('loveProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/love-shop-single';
+							window.location.href = '/product/detail/7';
 						});
 					</script>
 					
 					<li class="last product">
+						<input type="hidden" th:value="8"/>
 					<img id="ssgProduct" src="https://i.ibb.co/5x08Zw2/ssg.jpg" alt="ssg" border="0"></a>
 					<h3>ssg glasses</h3>
 					<span class="price"><span class="amount">490,000원</span></span>
 					</li>
 					<script>
 						document.getElementById('ssgProduct').addEventListener('click', function() {
-							window.location.href = '/userinterface/ssg-shop-single';
+							window.location.href = '/product/detail/8';
 						});
 					</script>
 					

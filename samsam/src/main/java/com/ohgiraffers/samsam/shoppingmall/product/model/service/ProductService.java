@@ -20,4 +20,6 @@ public interface ProductService {
 
 
     void delete(int productSeq);
+
+    ProductDTO findProductDetail(int productNo);
 }

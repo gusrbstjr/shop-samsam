@@ -51,14 +51,31 @@ public class ProductController {
         return "redirect:/product/list";
     }
 
+    @GetMapping("/main")
+    public String mainPage() {
+        return "userinterface/index";
+    }
 
+    @GetMapping("detail/{productNo}")
+    public String detailPage(@PathVariable("productNo") int productNo, Model model) {
+        ProductDTO product = productService.findProductDetail(productNo);
+
+        System.out.println("product ========> " + product);
+        model.addAttribute("product", product);
+
+
+        // 데이터베이스에서 product + img_tb 테이블을 조인해서 데이터를 들고오는데
+        // 기준은 productNo의 값을 조건절의 값으로 사용
+        // 값을 안넘겨도 되니깐 조회하는것만 출력하기
+
+        return "userinterface/shop-single";
+    }
 
     @GetMapping("/update/{productSeq}")
     public String updateForm(@PathVariable int productSeq, Model model){
         ProductDTO productDTO = productService.findByProductSeq(productSeq);
         System.out.println("productDTO = " + productDTO);
         model.addAttribute("updateProduct",productDTO);
-
         return "product/update";
     }
 
