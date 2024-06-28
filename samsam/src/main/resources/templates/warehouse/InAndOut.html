@@ -80,17 +80,17 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="http://localhost:8080/main">
+            <a class="nav-link " href="">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
         </li><!-- End Dashboard Nav -->
-        <li class="nav-item">
-                    <a class="nav-link collapsed" href="http://localhost:8080/product/list">
-                        <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
-                    </a>
-        </li><!-- End Components Nav -->
 
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/product/list">
+                <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
+            </a>
+        </li><!-- End Components Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -98,12 +98,12 @@
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="http://localhost:8080/members">
+                    <a href="/members">
                         <i class="bi bi-circle"></i><span>회원 목록 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="email">
+                    <a href="/members/mail-form">
                         <i class="bi bi-circle"></i><span>메일</span>
                     </a>
                 </li>
@@ -116,12 +116,12 @@
             </a>
             <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="goOrderChange">
+                    <a href="http://localhost:8080/orderChange/list">
                         <i class="bi bi-circle"></i><span>주문 변경</span>
                     </a>
                 </li>
                 <li>
-                    <a href="goOrderSearch">
+                    <a href="http://localhost:8080/order/list">
                         <i class="bi bi-circle"></i><span>주문 조회</span>
                     </a>
                 </li>
@@ -134,12 +134,12 @@
             </a>
             <ul id="board-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="http://localhost:8080/board/notice">
+                    <a href="/board/notice">
                         <i class="bi bi-circle"></i><span>공지사항</span>
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/QnA">
+                    <a href="/QnA">
                         <i class="bi bi-circle"></i><span>Q&A</span>
                     </a>
                 </li>
@@ -153,24 +153,25 @@
             </a>
             <ul id="object-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="http://localhost:8080/warehouse/list">
+                    <a href="/warehouse/list">
                         <i class="bi bi-circle"></i><span>재고 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost:8080/warehouseLog/list">
+                    <a href="/warehouseLog/list">
                         <i class="bi bi-circle"></i><span>재고 내역 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="InAndOut">
+                    <a href="/InAndOut">
                         <i class="bi bi-circle"></i><span>입/출고</span>
                     </a>
                 </li>
             </ul>
         </li><!-- End Profile Page Nav -->
     </ul>
-</aside><!-- End Sidebar-->
+</aside>
+<!-- End Sidebar-->
 
 <main id="main" class="main">
 
