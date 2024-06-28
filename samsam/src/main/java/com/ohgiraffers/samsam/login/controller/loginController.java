@@ -30,10 +30,11 @@ public class loginController {
         boolean isLogin = loginService.isLogin(username, password);
         if (isLogin) {
             String findAccountRoll = loginService.findAccountRoll(username);
+            int findSeq = loginService.findSeq(username);
+            System.out.println("findSeq" + findSeq);
             switch (findAccountRoll) {
                 case "쇼핑몰관리자":
                 case "창고관리자":
-
                     return "redirect:/main";
                 default:
                     return "userinterface/index";
