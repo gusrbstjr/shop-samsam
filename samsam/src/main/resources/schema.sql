@@ -66,12 +66,14 @@ CREATE TABLE mail_log
 
 CREATE TABLE product
 (
-    product_seq   int AUTO_INCREMENT NOT NULL
+    product_seq     int AUTO_INCREMENT NOT NULL
         PRIMARY KEY,
-    product_name  varchar(32)        NOT NULL,
-    register_date datetime           NOT NULL,
-    product_price int                NOT NULL,
-    category_name varchar(10)        NOT NULL
+    product_name    varchar(32)        NOT NULL,
+    register_date   datetime           NOT NULL,
+    product_price   int                NOT NULL,
+    category_name   varchar(10)        NOT NULL,
+    product_content varchar(3000)      NOT NULL,
+    delete_yn       tinyint(1)         NOT NULL
 );
 
 CREATE TABLE img_tb
