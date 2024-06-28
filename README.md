@@ -17,14 +17,137 @@
 5. 이정훈 (leejeonghun99)
 
 ##  개발 환경
-* Develop : IntelliJ IDEA 2024.1.1 (Ultimate Edition)
+* devtool : IntelliJ IDEA 2024.1.1 (Ultimate Edition)
 * JAVA JDK: Temurin version '17.0.10'
 * MySQL-connector-j : 8.0.33
 * Mybatis : 3.5.6
+* Build Tool : gradle
 * Version Control : Git
-
+* Communicate : Slack
+* Collaboration Tool : Figma, Github, Notion
 
 ## 프로젝트 구조
+<<<<<<< HEAD
+````
+📦samsam
+ ┣ 📂gradle
+ ┃ ┗ 📂wrapper
+ ┃   ┣ 📜gradle-wrapper.jar
+ ┃   ┗ 📜gradle-wrapper.properties
+ ┣ 📂src
+ ┃ ┣ 📂main
+ ┃ ┃ ┣ 📂java
+ ┃ ┃ ┃ ┗ 📂com
+ ┃ ┃ ┃   ┗ 📂ohgiraffers
+ ┃ ┃ ┃     ┗ 📂samsam
+ ┃ ┃ ┃       ┣ 📂board
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜QnAController.java
+ ┃ ┃ ┃       ┃ ┣ 📂model
+ ┃ ┃ ┃       ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃       ┃ ┃ ┃ ┗ 📜QnAMapper.java
+ ┃ ┃ ┃       ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃       ┃ ┃ ┃ ┗ 📜BoardDTO.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📂service
+ ┃ ┃ ┃       ┃ ┃   ┣ 📜QnAService.java
+ ┃ ┃ ┃       ┃ ┃   ┗ 📜QnAServiceImpl.java
+ ┃ ┃ ┃       ┃ ┗ 📂notice
+ ┃ ┃ ┃       ┃   ┣ 📜Board.java
+ ┃ ┃ ┃       ┃   ┣ 📜NoticeController.java
+ ┃ ┃ ┃       ┃   ┣ 📜NoticeMapper.java
+ ┃ ┃ ┃       ┃   ┗ 📜NoticeService.java
+ ┃ ┃ ┃       ┣ 📂common
+ ┃ ┃ ┃       ┃ ┣ 📂exception
+ ┃ ┃ ┃       ┃ ┃ ┣ 📜OrderException.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜WareHouseException.java
+ ┃ ┃ ┃       ┃ ┣ 📂mybatis
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜MybatisConfiguration.java
+ ┃ ┃ ┃       ┃ ┗ 📂paging
+ ┃ ┃ ┃       ┃   ┗ 📜Pagenation.java
+ ┃ ┃ ┃       ┣ 📂login
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜loginController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜loginMapper.java
+ ┃ ┃ ┃       ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜accountDTO.java
+ ┃ ┃ ┃       ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃     ┣ 📜loginService.java
+ ┃ ┃ ┃       ┃     ┗ 📜loginServiceImpl.java
+ ┃ ┃ ┃       ┣ 📂mail
+ ┃ ┃ ┃       ┃ ┣ 📜MailConfig.java
+ ┃ ┃ ┃       ┃ ┣ 📜MailController.java
+ ┃ ┃ ┃       ┃ ┣ 📜MailMapper.java
+ ┃ ┃ ┃       ┃ ┣ 📜MailRequest.java
+ ┃ ┃ ┃       ┃ ┗ 📜MailService.java
+ ┃ ┃ ┃       ┣ 📂main
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜MainController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜SaleMapper.java
+ ┃ ┃ ┃       ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜SaleDTO.java
+ ┃ ┃ ┃       ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃     ┣ 📜SaleImpl.java
+ ┃ ┃ ┃       ┃     ┗ 📜SaleService.java
+ ┃ ┃ ┃       ┣ 📂member
+ ┃ ┃ ┃       ┃ ┣ 📜Member.java
+ ┃ ┃ ┃       ┃ ┣ 📜MemberController.java
+ ┃ ┃ ┃       ┃ ┣ 📜MemberMapper.java
+ ┃ ┃ ┃       ┃ ┗ 📜MemberService.java
+ ┃ ┃ ┃       ┣ 📂order
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┣ 📜OrderChangeController.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜OrderFindController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃   ┃ ┣ 📜OrderChangeMapper.java
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜OrderFindMapper.java
+ ┃ ┃ ┃       ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃   ┃ ┣ 📜OrderChangeDTO.java
+ ┃ ┃ ┃       ┃   ┃ ┣ 📜OrderFindDTO.java
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜StockDTO.java
+ ┃ ┃ ┃       ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃     ┣ 📜OrderChangeImpl.java
+ ┃ ┃ ┃       ┃     ┣ 📜OrderChangeService.java
+ ┃ ┃ ┃       ┃     ┣ 📜OrderFindService.java
+ ┃ ┃ ┃       ┃     ┗ 📜OrderFindServiceImpl.java
+ ┃ ┃ ┃       ┣ 📂shoppingmall
+ ┃ ┃ ┃       ┃ ┣ 📂product
+ ┃ ┃ ┃       ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┃ ┗ 📜ProductController.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃ ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃ ┃   ┃ ┗ 📜ProductMapper.java
+ ┃ ┃ ┃       ┃ ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃ ┃   ┃ ┣ 📜ImageDTO.java
+ ┃ ┃ ┃       ┃ ┃   ┃ ┗ 📜ProductDTO.java
+ ┃ ┃ ┃       ┃ ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃ ┃     ┣ 📜ProductService.java
+ ┃ ┃ ┃       ┃ ┃     ┗ 📜ProductServiceImpl.java
+ ┃ ┃ ┃       ┃ ┗ 📂userinterface
+ ┃ ┃ ┃       ┃   ┗ 📂purchase
+ ┃ ┃ ┃       ┃     ┣ 📂controller
+ ┃ ┃ ┃       ┃     ┃ ┗ 📜PurchaseController.java
+ ┃ ┃ ┃       ┃     ┗ 📂model
+ ┃ ┃ ┃       ┃       ┣ 📂dao
+ ┃ ┃ ┃       ┃       ┃ ┗ 📜PurchaseMapper.java
+ ┃ ┃ ┃       ┃       ┣ 📂service
+ ┃ ┃ ┃       ┃       ┃ ┣ 📜PurchaseService.java
+ ┃ ┃ ┃       ┃       ┃ ┗ 📜PurchaseServiceImpl.java
+ ┃ ┃ ┃       ┃       ┗ 📜PurchaseDTO.java
+ ┃ ┃ ┃       ┣ 📂warehouse
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┣ 📜StockController.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜WareHouseController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃
+=======
+>>>>>>> 59a45b39d62f117c8f0a8f703e0909a0fd4f2aad
+
 
                        
 
@@ -46,8 +169,8 @@
 
 #### 석현균
 * 창고 관리자
-  1. 
-  2. 
+  1. 재고 조회
+  2. 로그 조회
 
 #### 이창연
 * 쇼핑몰 관리자
@@ -64,3 +187,19 @@
 * 창고 관리자, 쇼핑몰 관리자, 로그인
   1. 
   2.
+
+## 📕 프로젝트 후기
+
+#### 서윤정
+*
+ 
+#### 석현균
+* 
+ 
+#### 이창연
+* 
+
+#### 장윤지
+* 
+#### 이정훈
+* 
