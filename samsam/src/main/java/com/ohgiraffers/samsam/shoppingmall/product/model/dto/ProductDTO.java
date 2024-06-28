@@ -16,4 +16,7 @@ public class ProductDTO {
     private String registerDate;
     private int productPrice;
     private String categoryName;
+    private String productContent;
+    private int deleteYn;
+    private ImageDTO image;
 }

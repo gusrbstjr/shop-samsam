@@ -4,5 +4,63 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ohgiraffers.samsam.order.model.dao.OrderChangeMapper">
 
+    <resultMap id="orderChangeResultMap" type="com.ohgiraffers.samsam.order.model.dto.OrderChangeDTO">
+        <id property="order_seq" column="ORDER_SEQ"/>
+        <result property="customer_seq" column="CUSTOMER_SEQ"/>
+        <result property="product_seq" column="PRODUCT_SEQ"/>
+        <result property="total_price" column="TOTAL_PRICE"/>
+        <result property="register_date" column="REGISTER_DATE"/>
+        <result property="order_status" column="ORDER_STATUS"/>
+    </resultMap>
+
+
+<!--    <resultMap id="orderChangeMap" type="com.ohgiraffers.samsam.order.model.dto.OrderChangeDTO">-->
+<!--        <id property="order_seq" column="ORDER_SEQ"/>-->
+<!--        <result property="customer_seq" column="CUSTOMER_SEQ"/>-->
+<!--        <result property="product_seq" column="PRODUCT_SEQ"/>-->
+<!--        <result property="total_price" column="TOTAL_PRICE"/>-->
+<!--        <result property="register_date" column="REGISTER_DATE"/>-->
+<!--        <result property="order_status" column="ORDER_STATUS"/>-->
+<!--    </resultMap>-->
+
+
+
+    <select id="orderChange" resultMap="orderChangeResultMap">
+        SELECT
+            order_seq,
+            customer_seq,
+            product_seq,
+            total_price,
+            register_date,
+            order_status
+        FROM
+            `order`
+    </select>
+
+
+
+    <select id="findSequence" resultMap="orderChangeResultMap">
+        SELECT
+            order_seq,
+            customer_seq,
+            product_seq,
+            total_price,
+            register_date,
+            order_status
+        FROM
+            `order`
+        WHERE
+            order_seq = #{ordersequence}
+    </select>
+
+
+    <update id="changeStatus" parameterType="int">
+        UPDATE
+            `order`
+        SET
+            order_status = "발송완료"
+        WHERE
+            order_seq= #{ ordersequence }
+    </update>
 
 </mapper>
