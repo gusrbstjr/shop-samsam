@@ -11,17 +11,22 @@
         WHERE product_seq = #{productSeq}
     </select>
 
-    <!-- 구매 수량 업데이트 -->
-    <update id="updatePurchaseQuantity">
-        UPDATE `order`
-        SET order_quantity = order_quantity + #{quantity}
-        WHERE product_seq = #{productSeq}
-    </update>
-
-    <!-- 총 결제 금액 업데이트 -->
-    <update id="updateTotalPurchaseAmount">
-        UPDATE `order`
-        SET total_price = #{totalAmount}
-        WHERE product_seq = #{productSeq}
-    </update>
+    <!-- 새로운 구매 등록 -->
+    <insert id="insertPurchase">
+        INSERT INTO `order` (
+        customer_seq,
+        product_seq,
+        total_price,
+        register_date,
+        order_status,
+        order_quantity
+        ) VALUES (
+        #{customerSeq},
+        #{productSeq},
+        #{totalPrice},
+        NOW(),
+        #{orderStatus},
+        #{quantity}
+        )
+    </insert>
 </mapper>

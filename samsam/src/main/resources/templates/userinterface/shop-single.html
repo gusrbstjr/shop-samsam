@@ -58,7 +58,7 @@
                                     <div itemprop="description">
                                         <p th:text="${product.productContent}"></p>
                                     </div>
-                                    <form class="cart" method="post" action="/purchase" enctype='multipart/form-data'>
+                                    <form class="cart" method="post" action="/purchase">
                                         <input type="hidden" name="productSeq" th:value="${product.productSeq}">
                                         <div class="quantity">
                                             <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"/>
