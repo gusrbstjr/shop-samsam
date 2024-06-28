@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.samsam.shoppingmall.userinterface.purchase.model.dao.PurchaseMapper">
+
+    <!-- 상품 가격 조회 -->
+    <select id="findProductPriceById" resultType="int">
+        SELECT product_price
+        FROM product
+        WHERE product_seq = #{productSeq}
+    </select>
+
+    <!-- 구매 수량 업데이트 -->
+    <update id="updatePurchaseQuantity">
+        UPDATE `order`
+        SET order_quantity = order_quantity + #{quantity}
+        WHERE product_seq = #{productSeq}
+    </update>
+
+    <!-- 총 결제 금액 업데이트 -->
+    <update id="updateTotalPurchaseAmount">
+        UPDATE `order`
+        SET total_price = #{totalAmount}
+        WHERE product_seq = #{productSeq}
+    </update>
+</mapper>

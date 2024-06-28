@@ -3,6 +3,7 @@ package com.ohgiraffers.samsam.board.model.service;
 import com.ohgiraffers.samsam.board.model.dao.QnAMapper;
 import com.ohgiraffers.samsam.board.model.dto.BoardDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import java.util.Map;
 @Slf4j
 public class QnAServiceImpl implements QnAService {
     private final QnAMapper qnAMapper;
+
 
     public QnAServiceImpl(QnAMapper qnAMapper) {
         this.qnAMapper = qnAMapper;

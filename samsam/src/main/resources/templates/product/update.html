@@ -139,10 +139,9 @@
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" href="/product/list">
                 <i class="bi bi-menu-button-wide"></i><span>상품 관리</span>
             </a>
-
         </li><!-- End Components Nav -->
 
         <li class="nav-item">
@@ -151,12 +150,12 @@
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="forms-elements.html">
+                    <a href="/members">
                         <i class="bi bi-circle"></i><span>회원 목록 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="forms-layouts.html">
+                    <a href="/members/mail-form">
                         <i class="bi bi-circle"></i><span>메일</span>
                     </a>
                 </li>
@@ -169,12 +168,12 @@
             </a>
             <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="OrderChange.html">
+                    <a href="/OrderChange.html">
                         <i class="bi bi-circle"></i><span>주문 변경</span>
                     </a>
                 </li>
                 <li>
-                    <a href="OrderFind.html">
+                    <a href="/order/list">
                         <i class="bi bi-circle"></i><span>주문 조회</span>
                     </a>
                 </li>
@@ -187,12 +186,12 @@
             </a>
             <ul id="board-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="charts-chartjs.html">
+                    <a href="/board/notice">
                         <i class="bi bi-circle"></i><span>공지사항</span>
                     </a>
                 </li>
                 <li>
-                    <a href="charts-apexcharts.html">
+                    <a href="/QnA">
                         <i class="bi bi-circle"></i><span>Q&A</span>
                     </a>
                 </li>
@@ -206,17 +205,17 @@
             </a>
             <ul id="object-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="charts-chartjs.html">
+                    <a href="/warehouse/list">
                         <i class="bi bi-circle"></i><span>재고 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="charts-apexcharts.html">
+                    <a href="/warehouseLog/list">
                         <i class="bi bi-circle"></i><span>재고 내역 조회</span>
                     </a>
                 </li>
                 <li>
-                    <a href="charts-apexcharts.html">
+                    <a href="/InAndOut">
                         <i class="bi bi-circle"></i><span>입/출고</span>
                     </a>
                 </li>
@@ -246,34 +245,48 @@
                         <h5 class="card-title">상품 등록 수정</h5>
 
                         <!-- General Form Elements -->
-                        <form action="/product/update" method="post">
+                        <form action="/product/update" method="post" onsubmit="return validate()">
                             <input type="hidden" th:value="${updateProduct.productSeq}" name="productSeq">
 
                             <div class="row mb-3">
                                 <label for="inputText" class="col-sm-2 col-form-label">상품명</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="productName" th:value="${updateProduct.productName}">
+                                    <input type="text" class="form-control" id="productName" name="productName" th:value="${updateProduct.productName}">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputDate" class="col-sm-2 col-form-label">상품 등록날짜</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control" name="registerDate" th:value="${updateProduct.registerDate}">
+                                    <input type="date" class="form-control" id="registerDate" name="registerDate" th:value="${updateProduct.registerDate}">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputPrice" class="col-sm-2 col-form-label">상품 가격</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="productPrice" th:value="${updateProduct.productPrice}">
+                                    <input type="number" class="form-control" id="productPrice" name="productPrice" th:value="${updateProduct.productPrice}">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputPrice" class="col-sm-2 col-form-label">카테고리명</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="categoryName" th:value="${updateProduct.categoryName}">
+                                    <input type="text" class="form-control" id="categoryName" name="categoryName" th:value="${updateProduct.categoryName}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputPrice" class="col-sm-2 col-form-label">상품설명</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="productContent" name="productContent" th:value="${updateProduct.productContent}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputPrice" class="col-sm-2 col-form-label">삭제여부 <br>(0이면 삭제)<br></label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="deleteYn" name="deleteYn" th:value="${updateProduct.deleteYn}">
                                 </div>
                             </div>
 
@@ -305,6 +318,29 @@
                         <script src="/bootstrap/assets/vendor/simple-datatables/simple-datatables.js"></script>
                         <script src="/bootstrap/assets/vendor/tinymce/tinymce.min.js"></script>
                         <script src="/bootstrap/assets/vendor/php-email-form/validate.js"></script>
+
+                        <script>
+                            function validate() {
+                                const fields = [
+                                    { id: 'productName', message: '상품명을 입력해주세요' },
+                                    { id: 'registerDate', message: '상품 등록 날짜를 입력해주세요' },
+                                    { id: 'productPrice', message: '상품 가격을 입력해주세요' },
+                                    { id: 'categoryName', message: '카테고리명을 입력해주세요' },
+                                    { id: 'productContent', message: '상품 설명을 입력해주세요' },
+                                    { id: 'deleteYn', message: '삭제 여부를 입력해주세요' }
+                                ];
+
+                                for (let field of fields) {
+                                    const value = document.getElementById(field.id).value;
+                                    if (value === '') {
+                                        alert(field.message);
+                                        return false;
+                                    }
+                                }
+
+                                return true;
+                            }
+                        </script>
 
                         <!-- Template Main JS File -->
                         <script src="/bootstrap/assets/js/main.js"></script>
