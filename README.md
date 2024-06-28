@@ -20,191 +20,124 @@
 
 
 ## 프로젝트 구조
+````
 📦samsam
  ┣ 📂gradle
  ┃ ┗ 📂wrapper
- ┃ ┃ ┣ 📜gradle-wrapper.jar
- ┃ ┃ ┗ 📜gradle-wrapper.properties
+ ┃   ┣ 📜gradle-wrapper.jar
+ ┃   ┗ 📜gradle-wrapper.properties
  ┣ 📂src
  ┃ ┣ 📂main
  ┃ ┃ ┣ 📂java
  ┃ ┃ ┃ ┗ 📂com
- ┃ ┃ ┃ ┃ ┗ 📂ohgiraffers
- ┃ ┃ ┃ ┃ ┃ ┗ 📂samsam
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜QnAController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜QnAMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜BoardDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜QnAService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜QnAServiceImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂notice
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜Board.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜NoticeController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜NoticeMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜NoticeService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂common
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂exception
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderException.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WareHouseException.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂mybatis
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MybatisConfiguration.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂paging
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜Pagenation.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂login
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜loginController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜loginMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜accountDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜loginService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜loginServiceImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂mail
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailConfig.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MailRequest.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MailService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MainController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜SaleMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜SaleDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜SaleImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜SaleService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂member
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜Member.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜MemberMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜MemberService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂order
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChangeController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜OrderFindController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChangeMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜OrderFindMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChangeDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderFindDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜StockDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChangeImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChangeService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderFindService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜OrderFindServiceImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂shoppingmall
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂product
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ProductController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ProductMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ImageDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ProductDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜ProductService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜ProductServiceImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂userinterface
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂purchase
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜PurchaseController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜PurchaseMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜PurchaseService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜PurchaseServiceImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜PurchaseDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂warehouse
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂controller
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜StockController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WareHouseController.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂model
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dao
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WareHouseMapper.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂dto
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜logDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜productDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜WareHouseDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WareHouseLogDTO.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📂service
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📜WareHouseService.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜WareHouseServiceImpl.java
- ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜SamsamApplication.java
- ┃ ┃ ┗ 📂resources
- ┃ ┃ ┃ ┣ 📂mappers
- ┃ ┃ ┃ ┃ ┣ 📜loginMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜MailMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜MemberMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜NoticeMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜OrderChangeMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜OrderFindMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜ProductMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜purchaseMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜QnAMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜SaleMapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜Stock2Mapper.xml
- ┃ ┃ ┃ ┃ ┣ 📜StockMapper.xml
- ┃ ┃ ┃ ┃ ┗ 📜WareHouseMapper.xml
- ┃ ┃ ┃ ┣ 📂static
- ┃ ┃ ┃ ┃ ┣ 📂bootstrap
- ┃ ┃ ┃ ┃ ┃ ┗ 📂assets
- ┃ ┃ ┃ ┃ ┃ ┃ ┣ 📂css
- ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┗ 📜style.css
- ┃ ┃ ┃ ┣ 📂templates
- ┃ ┃ ┃ ┃ ┣ 📂board
- ┃ ┃ ┃ ┃ ┃ ┣ 📜detail.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜new.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜notice.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜QnA.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜update.html
- ┃ ┃ ┃ ┃ ┣ 📂login
- ┃ ┃ ┃ ┃ ┃ ┗ 📜login.html
- ┃ ┃ ┃ ┃ ┣ 📂main
- ┃ ┃ ┃ ┃ ┃ ┗ 📜main.html
- ┃ ┃ ┃ ┃ ┣ 📂member
- ┃ ┃ ┃ ┃ ┃ ┣ 📜mail-form.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜mail-sent.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜members.html
- ┃ ┃ ┃ ┃ ┣ 📂order
- ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChange.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChangeSelect.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜OrderChangeStatus.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜OrderFind.html
- ┃ ┃ ┃ ┃ ┣ 📂product
- ┃ ┃ ┃ ┃ ┃ ┣ 📜delete.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜product.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜productRegister.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜update.html
- ┃ ┃ ┃ ┃ ┣ 📂sale
- ┃ ┃ ┃ ┃ ┃ ┗ 📜sale.html
- ┃ ┃ ┃ ┃ ┣ 📂userinterface
- ┃ ┃ ┃ ┃ ┃ ┣ 📜contact.php
- ┃ ┃ ┃ ┃ ┃ ┣ 📜index.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜license.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜shop-single.html
- ┃ ┃ ┃ ┃ ┣ 📂warehouse
- ┃ ┃ ┃ ┃ ┃ ┣ 📜InAndOut.html
- ┃ ┃ ┃ ┃ ┃ ┣ 📜list.html
- ┃ ┃ ┃ ┃ ┃ ┗ 📜WareHouseLog.html
- ┃ ┃ ┃ ┃ ┗ 📜customer-main.html
- ┃ ┃ ┃ ┣ 📜application.yml
- ┃ ┃ ┃ ┣ 📜logback.xml
- ┃ ┃ ┃ ┗ 📜schema.sql
+ ┃ ┃ ┃   ┗ 📂ohgiraffers
+ ┃ ┃ ┃     ┗ 📂samsam
+ ┃ ┃ ┃       ┣ 📂board
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜QnAController.java
+ ┃ ┃ ┃       ┃ ┣ 📂model
+ ┃ ┃ ┃       ┃ ┃ ┣ 📂dao
+ ┃ ┃ ┃       ┃ ┃ ┃ ┗ 📜QnAMapper.java
+ ┃ ┃ ┃       ┃ ┃ ┣ 📂dto
+ ┃ ┃ ┃       ┃ ┃ ┃ ┗ 📜BoardDTO.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📂service
+ ┃ ┃ ┃       ┃ ┃   ┣ 📜QnAService.java
+ ┃ ┃ ┃       ┃ ┃   ┗ 📜QnAServiceImpl.java
+ ┃ ┃ ┃       ┃ ┗ 📂notice
+ ┃ ┃ ┃       ┃   ┣ 📜Board.java
+ ┃ ┃ ┃       ┃   ┣ 📜NoticeController.java
+ ┃ ┃ ┃       ┃   ┣ 📜NoticeMapper.java
+ ┃ ┃ ┃       ┃   ┗ 📜NoticeService.java
+ ┃ ┃ ┃       ┣ 📂common
+ ┃ ┃ ┃       ┃ ┣ 📂exception
+ ┃ ┃ ┃       ┃ ┃ ┣ 📜OrderException.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜WareHouseException.java
+ ┃ ┃ ┃       ┃ ┣ 📂mybatis
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜MybatisConfiguration.java
+ ┃ ┃ ┃       ┃ ┗ 📂paging
+ ┃ ┃ ┃       ┃   ┗ 📜Pagenation.java
+ ┃ ┃ ┃       ┣ 📂login
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜loginController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜loginMapper.java
+ ┃ ┃ ┃       ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜accountDTO.java
+ ┃ ┃ ┃       ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃     ┣ 📜loginService.java
+ ┃ ┃ ┃       ┃     ┗ 📜loginServiceImpl.java
+ ┃ ┃ ┃       ┣ 📂mail
+ ┃ ┃ ┃       ┃ ┣ 📜MailConfig.java
+ ┃ ┃ ┃       ┃ ┣ 📜MailController.java
+ ┃ ┃ ┃       ┃ ┣ 📜MailMapper.java
+ ┃ ┃ ┃       ┃ ┣ 📜MailRequest.java
+ ┃ ┃ ┃       ┃ ┗ 📜MailService.java
+ ┃ ┃ ┃       ┣ 📂main
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜MainController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜SaleMapper.java
+ ┃ ┃ ┃       ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜SaleDTO.java
+ ┃ ┃ ┃       ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃     ┣ 📜SaleImpl.java
+ ┃ ┃ ┃       ┃     ┗ 📜SaleService.java
+ ┃ ┃ ┃       ┣ 📂member
+ ┃ ┃ ┃       ┃ ┣ 📜Member.java
+ ┃ ┃ ┃       ┃ ┣ 📜MemberController.java
+ ┃ ┃ ┃       ┃ ┣ 📜MemberMapper.java
+ ┃ ┃ ┃       ┃ ┗ 📜MemberService.java
+ ┃ ┃ ┃       ┣ 📂order
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┣ 📜OrderChangeController.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜OrderFindController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃   ┃ ┣ 📜OrderChangeMapper.java
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜OrderFindMapper.java
+ ┃ ┃ ┃       ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃   ┃ ┣ 📜OrderChangeDTO.java
+ ┃ ┃ ┃       ┃   ┃ ┣ 📜OrderFindDTO.java
+ ┃ ┃ ┃       ┃   ┃ ┗ 📜StockDTO.java
+ ┃ ┃ ┃       ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃     ┣ 📜OrderChangeImpl.java
+ ┃ ┃ ┃       ┃     ┣ 📜OrderChangeService.java
+ ┃ ┃ ┃       ┃     ┣ 📜OrderFindService.java
+ ┃ ┃ ┃       ┃     ┗ 📜OrderFindServiceImpl.java
+ ┃ ┃ ┃       ┣ 📂shoppingmall
+ ┃ ┃ ┃       ┃ ┣ 📂product
+ ┃ ┃ ┃       ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┃ ┗ 📜ProductController.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃ ┃   ┣ 📂dao
+ ┃ ┃ ┃       ┃ ┃   ┃ ┗ 📜ProductMapper.java
+ ┃ ┃ ┃       ┃ ┃   ┣ 📂dto
+ ┃ ┃ ┃       ┃ ┃   ┃ ┣ 📜ImageDTO.java
+ ┃ ┃ ┃       ┃ ┃   ┃ ┗ 📜ProductDTO.java
+ ┃ ┃ ┃       ┃ ┃   ┗ 📂service
+ ┃ ┃ ┃       ┃ ┃     ┣ 📜ProductService.java
+ ┃ ┃ ┃       ┃ ┃     ┗ 📜ProductServiceImpl.java
+ ┃ ┃ ┃       ┃ ┗ 📂userinterface
+ ┃ ┃ ┃       ┃   ┗ 📂purchase
+ ┃ ┃ ┃       ┃     ┣ 📂controller
+ ┃ ┃ ┃       ┃     ┃ ┗ 📜PurchaseController.java
+ ┃ ┃ ┃       ┃     ┗ 📂model
+ ┃ ┃ ┃       ┃       ┣ 📂dao
+ ┃ ┃ ┃       ┃       ┃ ┗ 📜PurchaseMapper.java
+ ┃ ┃ ┃       ┃       ┣ 📂service
+ ┃ ┃ ┃       ┃       ┃ ┣ 📜PurchaseService.java
+ ┃ ┃ ┃       ┃       ┃ ┗ 📜PurchaseServiceImpl.java
+ ┃ ┃ ┃       ┃       ┗ 📜PurchaseDTO.java
+ ┃ ┃ ┃       ┣ 📂warehouse
+ ┃ ┃ ┃       ┃ ┣ 📂controller
+ ┃ ┃ ┃       ┃ ┃ ┣ 📜StockController.java
+ ┃ ┃ ┃       ┃ ┃ ┗ 📜WareHouseController.java
+ ┃ ┃ ┃       ┃ ┗ 📂model
+ ┃ ┃ ┃       ┃   ┣ 📂dao
+ ┃ ┃ ┃
+
 
                        
 
