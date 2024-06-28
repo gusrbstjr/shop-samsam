@@ -43,4 +43,9 @@
         FROM
         warehouse_log
     </select>
+    <insert id="updateLog" useGeneratedKeys="true" keyColumn="warehouse_seq">
+        INSERT INTO
+        warehouse_log (product_seq, pro_quantity, `status` )
+        VALUES (#{ productSeq }, #{ productQuantity }, 3)
+    </insert>
 </mapper>
