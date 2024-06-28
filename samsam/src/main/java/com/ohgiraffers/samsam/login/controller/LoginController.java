@@ -1,12 +1,10 @@
 package com.ohgiraffers.samsam.login.controller;
 
 
-import com.ohgiraffers.samsam.login.model.service.loginService;
-import com.ohgiraffers.samsam.main.model.service.SaleService;
+import com.ohgiraffers.samsam.login.model.service.LoginService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -14,17 +12,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes(value = "findSeq")
 @Controller
 @Slf4j
-public class loginController {
+public class LoginController {
 
-    private final com.ohgiraffers.samsam.login.model.service.loginService loginService;
+    private final LoginService loginService;
 
-    private final SaleService saleService;
-
-
-
-    public loginController(loginService loginService, SaleService saleService) {
+    public LoginController(LoginService loginService) {
         this.loginService = loginService;
-        this.saleService = saleService;
     }
 
     @PostMapping("/login")
@@ -43,8 +36,8 @@ public class loginController {
                     return "userinterface/index";
             }
 
-        }else {
-            model.addAttribute("isError",true);
+        } else {
+            model.addAttribute("isError", true);
 
             return "login/login";
         }

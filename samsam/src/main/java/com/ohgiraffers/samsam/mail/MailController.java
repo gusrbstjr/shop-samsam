@@ -31,18 +31,13 @@ public class MailController {
         List<String> recipients = mailRequest.recipients();
         String subject = mailRequest.subject();
         String content = mailRequest.content();
-
-        log.info("recipients={}", recipients);
-        log.info("subject={}", subject);
-        log.info("content={}", content);
-
-
         mailService.sendMail(mailRequest);
 
         Map<String, String> mailMap = new HashMap<>();
         mailMap.put("mailTitle", subject);
         mailMap.put("mailContent", content);
         mailService.save(mailMap);
+        
         return "ok";
     }
 

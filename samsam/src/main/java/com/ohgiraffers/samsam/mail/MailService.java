@@ -12,6 +12,7 @@ import java.util.Map;
 @Service
 @RequiredArgsConstructor
 public class MailService {
+
     private final JavaMailSender sender;
     private final MailMapper mailMapper;
 
