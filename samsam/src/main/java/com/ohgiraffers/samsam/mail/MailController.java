@@ -1,6 +1,5 @@
 package com.ohgiraffers.samsam.mail;
 
-import com.ohgiraffers.samsam.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -28,7 +27,7 @@ public class MailController {
 
     @PostMapping("/members/mail/send")
     @ResponseBody
-    public String sendMail(@RequestBody MailRequest mailRequest) {
+    public String sendMail(@RequestBody MailRequest mailRequest) throws InterruptedException {
         List<String> recipients = mailRequest.recipients();
         String subject = mailRequest.subject();
         String content = mailRequest.content();
@@ -37,7 +36,9 @@ public class MailController {
         log.info("subject={}", subject);
         log.info("content={}", content);
 
+
         mailService.sendMail(mailRequest);
+
         Map<String, String> mailMap = new HashMap<>();
         mailMap.put("mailTitle", subject);
         mailMap.put("mailContent", content);
