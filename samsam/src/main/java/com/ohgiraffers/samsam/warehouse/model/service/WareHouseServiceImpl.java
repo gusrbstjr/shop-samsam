@@ -60,4 +60,9 @@ public class WareHouseServiceImpl implements WareHouseService{
     public List<logDTO> findlogs() {
         return wareHouseMapper.findlogs();
     }
+
+    @Override
+    public void updateLog(int productSeq, int quantity) {
+        wareHouseMapper.updateLog(productSeq, quantity);
+    }
 }
