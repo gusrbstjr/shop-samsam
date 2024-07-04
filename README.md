@@ -17,11 +17,11 @@
 5. 이정훈 (leejeonghun99)
 
 ##  개발 환경
-🔙 백엔드: Spring Boot, Java
-🖥️ 프론트엔드: Thymeleaf, JavaScript, Bootstrap
-💾 데이터베이스: MySQL
-🔗 ORM: MyBatis
-🏗️ 빌드 도구: Gradle
+* 🔙 백엔드: Spring Boot, Java
+* 🖥️ 프론트엔드: Thymeleaf, JavaScript, Bootstrap
+* 💾 데이터베이스: MySQL
+* 🔗 ORM: MyBatis
+* 🏗️ 빌드 도구: Gradle
 
 ## 프로젝트 구조
 
